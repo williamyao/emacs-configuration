@@ -1,0 +1,138 @@
+(add-to-list 'load-path "~/.emacs.d/elisp/")
+
+;;;; MELPA package repositories
+(require 'package)
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(package-initialize)
+
+(require 'column-marker)
+(require 'timestamps)
+(require 'magit)
+(require 'sexp-manipulation)
+
+;;;; Custom keybindings
+(global-set-key (kbd "C-x C-m") 'execute-extended-command)
+(global-set-key (kbd "C-c C-m") 'execute-extended-command)
+
+(global-set-key (kbd "C-w") 'backward-kill-word)
+(global-set-key (kbd "C-x C-k") 'kill-region)
+(global-set-key (kbd "C-c C-k") 'kill-region)
+
+(global-set-key (kbd "C-x C-j") 'delete-indentation)
+
+(global-set-key (kbd "C-x t") 'insert-timestamp)
+
+(global-set-key (kbd "C-x C-g") 'magit-status)
+
+(global-set-key (kbd "C-x C-y") 'upcase-sexp)
+
+(global-unset-key (kbd "RET"))
+
+(defun swap-window-buffers (dist)
+  "Swap the buffer in the current window with the buffer in the window
+   that is DIST calls of \\[other-window] away."
+  (interactive "p")
+  (let ((buf1 (buffer-name)))
+    (other-window dist)
+    (let ((buf2 (buffer-name)))
+      (switch-to-buffer buf1)
+      (other-window (- dist))
+      (switch-to-buffer buf2)
+      (other-window dist))))
+
+(global-set-key (kbd "C-c C-d C-s") 'swap-window-buffers)
+
+(defalias 'qrr 'query-replace-regexp)
+
+
+;;;; Remove menubar etc.
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'tool-bar-mode)   (tool-bar-mode   -1))
+(if (fboundp 'menu-bar-mode)   (menu-bar-mode   -1))
+
+
+;;;; IDO configuration
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+(setq ido-use-filename-at-point 'guess)
+(setq ido-create-new-buffer 'always)
+(setq ido-file-extensions-order
+      '(".lisp" ".asd"))
+
+
+;;;; ERC configuration
+(setq erc-hide-list '("JOIN" "PART" "QUIT"))
+(add-hook 'erc-mode-hook
+	  (lambda ()
+	    (erc-scrolltobottom-mode)
+	    (setq erc-input-line-position -2)))
+
+
+;;;; Writing text is important too
+(add-hook 'text-mode-hook
+	  (lambda ()
+	    (visual-line-mode)))
+
+
+;;;; SLIME configuration
+(setq inferior-lisp-program "/usr/local/bin/ccl")
+(setq slime-contribs '(slime-fancy))
+
+(add-hook 'lisp-mode-hook
+	  (lambda ()
+	    (paredit-mode)
+	    (abbrev-mode)
+	    (column-marker-1 75)))
+
+
+;;;; Magit configuration
+(setq magit-last-seen-setup-instructions "1.4.0")
+
+
+;;;; Font
+(setq mac-allow-anti-aliasing nil)
+(set-face-attribute 'default nil
+		    :font "Anonymous Pro"
+		    :height 100
+		    :weight 'normal)
+
+
+(setq ring-bell-function (lambda ()))
+(setq show-help-function nil)
+
+(show-paren-mode 1)
+
+
+;;;; Color theme
+(add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0/")
+(require 'color-theme)
+(color-theme-initialize)
+(color-theme-retro-orange)
+
+(setq truncate-partial-width-windows t)
+
+
+(defun eshell-mode-hook-func ()
+  (setq eshell-path-env (concat "/usr/local/bin:" eshell-path-env))
+  (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+  (define-key eshell-mode-map (kbd "M-s") 'other-window-or-split))
+ 
+(add-hook 'eshell-mode-hook 'eshell-mode-hook-func)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(newsticker-url-list
+   (quote
+    (("BBC News" "http://feeds.bbci.co.uk/news/world/rss.xml" nil nil nil))))
+ '(newsticker-url-list-defaults
+   (quote
+    (("CNET News.com" "http://export.cnet.com/export/feeds/news/rss/1,11176,,00.xml")))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
