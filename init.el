@@ -3,12 +3,14 @@
 ;;;; MELPA package repositories
 (require 'package)
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
 (require 'column-marker)
 (require 'timestamps)
 (require 'magit)
 (require 'sexp-manipulation)
+(require 'company)
 
 ;;;; Custom keybindings
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
@@ -22,9 +24,13 @@
 
 (global-set-key (kbd "C-x t") 'insert-timestamp)
 
-(global-set-key (kbd "C-x C-g") 'magit-status)
+(global-set-key (kbd "C-x C-h") 'magit-status)
 
-(global-set-key (kbd "C-x C-y") 'upcase-sexp)
+(defun backwards-upcase-sexp ()
+  (interactive)
+  (upcase-sexp -1))
+
+(global-set-key (kbd "C-x C-y") 'backwards-upcase-sexp)
 
 (global-unset-key (kbd "RET"))
 
@@ -75,15 +81,35 @@
 	    (visual-line-mode)))
 
 
-;;;; SLIME configuration
+;;;; SLY configuration
 (setq inferior-lisp-program "/usr/local/bin/ccl")
-(setq slime-contribs '(slime-fancy))
 
-(add-hook 'lisp-mode-hook
-	  (lambda ()
-	    (paredit-mode)
-	    (abbrev-mode)
-	    (column-marker-1 75)))
+(add-hook 'sly-mode-hook 'sly-company-mode)
+(add-to-list 'company-backends 'sly-company)
+
+(defun lisp-mode-customization ()
+  (paredit-mode)
+  (abbrev-mode)
+  (paren-face-mode)
+  (sly-mode)
+  
+  (column-marker-1 75)
+
+  (set-face-foreground 'column-marker-1 "red")
+  (set-face-background 'column-marker-1 nil)
+  (set-face-inverse-video 'company-tooltip-selection t)
+  (set-face-foreground 'parenthesis "dark slate gray")
+  (set-face-foreground 'font-lock-doc-face "#fdf17b")
+  (set-face-foreground 'font-lock-comment-face "#fdf17b")
+  (set-face-foreground 'font-lock-comment-delimiter-face "#fdf17b")
+  (set-face-foreground 'font-lock-string-face "#fdf17b")
+
+  (setq company-idle-delay 1)
+
+  (local-set-key (kbd "C-w") 'paredit-backward-kill-word)
+  (local-set-key (kbd "C-M-i") 'company-complete))
+
+(add-hook 'lisp-mode-hook 'lisp-mode-customization) 
 
 
 ;;;; Magit configuration
