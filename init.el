@@ -33,6 +33,8 @@
 (global-set-key (kbd "C-x C-y") 'backwards-upcase-sexp)
 
 (global-unset-key (kbd "RET"))
+(global-unset-key (kbd "C-x m"))
+(global-unset-key (kbd "C-x C-b"))
 
 (defun swap-window-buffers (dist)
   "Swap the buffer in the current window with the buffer in the window
@@ -104,8 +106,6 @@
   (set-face-foreground 'font-lock-comment-delimiter-face "#fdf17b")
   (set-face-foreground 'font-lock-string-face "#fdf17b")
 
-  (setq company-idle-delay 1)
-
   (local-set-key (kbd "C-w") 'paredit-backward-kill-word)
   (local-set-key (kbd "C-M-i") 'company-complete))
 
@@ -162,3 +162,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(put 'upcase-region 'disabled nil)
