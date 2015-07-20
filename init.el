@@ -52,7 +52,7 @@
 
 (defalias 'qrr 'query-replace-regexp)
 
-(setq sentence-end "\\. ")
+(setq sentence-end "[\\.;:!?] ")
 
 
 ;;;; Remove menubar etc.
