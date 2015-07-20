@@ -52,6 +52,8 @@
 
 (defalias 'qrr 'query-replace-regexp)
 
+(setq sentence-end "\\. ")
+
 
 ;;;; Remove menubar etc.
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
