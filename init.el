@@ -114,10 +114,6 @@
 (add-hook 'lisp-mode-hook 'lisp-mode-customization) 
 
 
-;;;; Magit configuration
-(setq magit-last-seen-setup-instructions "1.4.0")
-
-
 ;;;; Font
 (setq mac-allow-anti-aliasing nil)
 (set-face-attribute 'default nil
@@ -158,10 +154,5 @@
  '(newsticker-url-list-defaults
    (quote
     (("CNET News.com" "http://export.cnet.com/export/feeds/news/rss/1,11176,,00.xml")))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+
 (put 'upcase-region 'disabled nil)
