@@ -96,20 +96,24 @@
   (abbrev-mode)
   (paren-face-mode)
   (sly-mode)
+  (hs-minor-mode)
   
   (column-marker-1 75)
 
   (set-face-foreground 'column-marker-1 "red")
   (set-face-background 'column-marker-1 nil)
-  (set-face-inverse-video 'company-tooltip-selection t)
-  (set-face-foreground 'parenthesis "dark slate gray")
-  (set-face-foreground 'font-lock-doc-face "#fdf17b")
-  (set-face-foreground 'font-lock-comment-face "#fdf17b")
-  (set-face-foreground 'font-lock-comment-delimiter-face "#fdf17b")
-  (set-face-foreground 'font-lock-string-face "#fdf17b")
+  ;; (set-face-inverse-video 'company-tooltip-selection t)
+  ;; (set-face-foreground 'parenthesis "dark slate gray")
+  ;; (set-face-foreground 'font-lock-doc-face "#fdf17b")
+  ;; (set-face-foreground 'font-lock-comment-face "#fdf17b")
+  ;; (set-face-foreground 'font-lock-comment-delimiter-face "#fdf17b")
+  ;; (set-face-foreground 'font-lock-string-face "#fdf17b")
 
   (local-set-key (kbd "C-w") 'paredit-backward-kill-word)
-  (local-set-key (kbd "C-M-i") 'company-complete))
+  (local-set-key (kbd "C-M-i") 'company-complete)
+  (local-set-key (kbd "<C-tab>") 'hs-toggle-hiding)
+
+  (hs-hide-all))
 
 (add-hook 'lisp-mode-hook 'lisp-mode-customization) 
 
@@ -132,7 +136,7 @@
 (add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0/")
 (require 'color-theme)
 (color-theme-initialize)
-(color-theme-retro-orange)
+(color-theme-charcoal-black)
 
 (setq truncate-partial-width-windows t)
 
@@ -156,3 +160,11 @@
     (("CNET News.com" "http://export.cnet.com/export/feeds/news/rss/1,11176,,00.xml")))))
 
 (put 'upcase-region 'disabled nil)
+
+(setq backup-by-copying t
+      backup-directory-alist '(("." . "~/.backups"))
+      auto-save-file-name-transforms '(("\\(.*\\)" "~/.autosaves/\\1" t))
+      delete-old-versions t
+      kept-new-versions 6
+      kept-old-versions 2
+      version-control t)
