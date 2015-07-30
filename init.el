@@ -165,7 +165,6 @@
 
 (setq backup-by-copying t
       backup-directory-alist '(("." . "~/.backups"))
-      auto-save-file-name-transforms '(("\\(.*\\)" "~/.autosaves/\\1" t))
       delete-old-versions t
       kept-new-versions 6
       kept-old-versions 2
