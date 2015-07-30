@@ -22,7 +22,7 @@
 
 (global-set-key (kbd "C-x C-j") 'delete-indentation)
 
-(global-set-key (kbd "C-x t") 'insert-timestamp)
+(global-set-key (kbd "C-x t") 'insert-todo)
 
 (global-set-key (kbd "C-x C-h") 'magit-status)
 
