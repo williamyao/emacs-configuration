@@ -35,6 +35,8 @@
 (global-unset-key (kbd "RET"))
 (global-unset-key (kbd "C-x m"))
 (global-unset-key (kbd "C-x C-b"))
+(global-unset-key (kbd "C-z"))
+(global-unset-key (kbd "C-x C-z"))
 
 (defun swap-window-buffers (dist)
   "Swap the buffer in the current window with the buffer in the window
