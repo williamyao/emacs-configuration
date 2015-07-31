@@ -169,3 +169,8 @@
       kept-new-versions 6
       kept-old-versions 2
       version-control t)
+
+(define-globalized-minor-mode global-page-break-lines-mode page-break-lines-mode
+  (lambda () (page-break-lines-mode)))
+
+(global-page-break-lines-mode)
