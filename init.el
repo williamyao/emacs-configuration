@@ -11,6 +11,9 @@
 (require 'magit)
 (require 'sexp-manipulation)
 (require 'company)
+(require 'page-break-lines)
+(require 'sly)
+(require 'sly-company)
 
 ;;;; Custom keybindings
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
