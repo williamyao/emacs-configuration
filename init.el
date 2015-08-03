@@ -8,6 +8,7 @@
 
 (require 'column-marker)
 (require 'timestamps)
+(require 'writing)
 (require 'magit)
 (require 'sexp-manipulation)
 (require 'company)
@@ -124,7 +125,6 @@
 
 
 ;;;; Font
-(setq mac-allow-anti-aliasing nil)
 (set-face-attribute 'default nil
 		    :font "Anonymous Pro"
 		    :height 100
@@ -162,7 +162,8 @@
     (("BBC News" "http://feeds.bbci.co.uk/news/world/rss.xml" nil nil nil))))
  '(newsticker-url-list-defaults
    (quote
-    (("CNET News.com" "http://export.cnet.com/export/feeds/news/rss/1,11176,,00.xml")))))
+    (("CNET News.com" "http://export.cnet.com/export/feeds/news/rss/1,11176,,00.xml"))))
+ '(writeroom-width 65))
 
 (put 'upcase-region 'disabled nil)
 
