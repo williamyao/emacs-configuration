@@ -174,7 +174,17 @@
       kept-old-versions 2
       version-control t)
 
-(define-globalized-minor-mode global-page-break-lines-mode page-break-lines-mode
-  (lambda () (page-break-lines-mode)))
+(fset 'yes-or-no-p 'y-or-n-p)
 
-(global-page-break-lines-mode)
+(setq kill-buffer-query-functions
+      (remq 'process-kill-buffer-query-function
+	    kill-buffer-query-functions))
+
+(toggle-frame-fullscreen)
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
