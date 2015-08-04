@@ -171,6 +171,7 @@
  '(newsticker-url-list-defaults
    (quote
     (("CNET News.com" "http://export.cnet.com/export/feeds/news/rss/1,11176,,00.xml"))))
+ '(next-screen-context-lines 2)
  '(writeroom-width 65))
 
 (put 'upcase-region 'disabled nil)
