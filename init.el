@@ -64,6 +64,9 @@
 
 (global-set-key (kbd "C-c C-d C-s") 'swap-window-buffers)
 
+(global-set-key (kbd "C-v") 'scroll-smoothly-up-command)
+(global-set-key (kbd "M-v") 'scroll-smoothly-down-command)
+
 (defalias 'qrr 'query-replace-regexp)
 
 (setq sentence-end "[\\.;:!?] ")
