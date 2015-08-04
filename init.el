@@ -6,15 +6,23 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
+(require 'cl) ; the CL stuff is too useful
+
 (require 'column-marker)
 (require 'timestamps)
 (require 'writing)
+(require 'smooth-scrolling)
 (require 'magit)
 (require 'sexp-manipulation)
 (require 'company)
 (require 'page-break-lines)
 (require 'sly)
 (require 'sly-company)
+
+;;; for debugging
+(defun display-prefix (arg)
+  (interactive "P")
+  (message "%s" arg))
 
 ;;;; Custom keybindings
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
