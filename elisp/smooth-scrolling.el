@@ -9,6 +9,16 @@
 
 (defun near-full-page () (- (window-height) next-screen-context-lines))
 
+(defun preceeding-screen-lines ()
+  (save-excursion
+    (move-to-window-line 0)
+    (count-screen-lines 1 (point))))
+
+(defun remaining-screen-lines ()
+  (save-excursion
+    (move-to-window-line '-)
+    (count-screen-lines (point))))
+
 (defun scroll-smoothly-up (lines)
   "Scroll the current window up by LINES lines over a short duration."
   (let* ((lines-magnitude (abs lines))
@@ -31,9 +41,12 @@ If LINES is -, scroll a near full page down.
 A near full page is `next-screen-context-lines' less than a full page."
   (interactive "P")
   (case lines
-    ((nil) (scroll-smoothly-up (near-full-page)))
-    ((-) (scroll-smoothly-down (near-full-page)))
-    (otherwise (scroll-smoothly-up lines))))
+    ((nil) (scroll-smoothly-up (min (remaining-screen-lines)
+				    (near-full-page))))
+    ((-) (scroll-smoothly-down (min (preceeding-screen-lines)
+				    (near-full-page))))
+    (otherwise (scroll-smoothly-up (min (remaining-screen-lines)
+					lines)))))
 
 (defun scroll-smoothly-down-command (lines)
   "Scroll the current window down by LINES.
@@ -42,8 +55,11 @@ If LINES is -, scroll a near full page up.
 A near full page is `next-screen-context-lines' less than a full page."
   (interactive "P")
   (case lines
-    ((nil) (scroll-smoothly-down (near-full-page)))
-    ((-) (scroll-smoothly-up (near-full-page)))
-    (otherwise (scroll-smoothly-down lines))))
+    ((nil) (scroll-smoothly-down (min (preceeding-screen-lines)
+				      (near-full-page))))
+    ((-) (scroll-smoothly-up (min (remaining-screen-lines)
+				  (near-full-page))))
+    (otherwise (scroll-smoothly-down (min (preceeding-screen-lines)
+					  lines)))))
 
 (provide 'smooth-scrolling)
