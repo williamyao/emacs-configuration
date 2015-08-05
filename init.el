@@ -51,6 +51,8 @@
 (load-library "keybinds")
 (load-library "modes")
 
+;;; Misc configuration.
+
 (setq ring-bell-function (lambda ()))
 (setq show-help-function nil)
 
