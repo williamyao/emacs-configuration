@@ -81,4 +81,4 @@
 
 (toggle-frame-fullscreen)
 
-(elisp) ; A shell is just too useful, no matter what.
+(eshell) ; A shell is just too useful, no matter what.
