@@ -6,7 +6,7 @@
 
 (defvar user-home
   (case system-type
-    ((cygwin linux gnu/linux) "/usr/william/")
+    ((cygwin linux gnu/linux) "/home/william/")
     ((darwin) "/Users/william/")))
 
 (defun home-path (path) (concat user-home path))
