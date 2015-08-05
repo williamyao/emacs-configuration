@@ -6,7 +6,8 @@
 
 (defvar user-home
   (case system-type
-    ((cygwin linux gnu/linux) "/home/william/")
+    ((cygwin) "/home/William.Yao/")
+    ((linux gnu/linux) "/home/william/")
     ((darwin) "/Users/william/")))
 
 (defun home-path (path) (concat user-home path))
@@ -82,5 +83,7 @@
 (color-theme-charcoal-black)
 
 (toggle-frame-fullscreen)
+
+(setq inhibit-splash-screen t)
 
 (eshell) ; A shell is just too useful, no matter what.
