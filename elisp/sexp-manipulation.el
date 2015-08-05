@@ -1,6 +1,6 @@
 ;;;; Various tools for manipulating s-expressions more easily.
 
-;;;; Updated 2015-07-14
+;;;; Updated 2015-08-05
 
 (defmacro define-sexp-operation (operation-name)
   `(defun ,(intern (format "%s%s" operation-name "-sexp")) (amount)
@@ -21,7 +21,8 @@
 (define-sexp-operation downcase)
 (define-sexp-operation capitalize)
 
+(defun backwards-upcase-sexp ()
+  (interactive)
+  (upcase-sexp -1))
+
 (provide 'sexp-manipulation)
-
-    
-
