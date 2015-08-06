@@ -51,7 +51,7 @@
 (add-hook 'lisp-mode-hook 
 	  (lambda ()
 	    (sly-mode)
-	    (lisp-mode-configuration)))
+	    (lisp-mode-customization)))
 
 ;;; Show Paren
 (show-paren-mode 1)
