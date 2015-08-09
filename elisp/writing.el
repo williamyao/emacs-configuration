@@ -6,7 +6,7 @@
 
 (define-derived-mode writing-mode text-mode "Writing"
   "Enter a new frame to edit text, with no distractions."
-  (new-frame)
+  (make-frame)
   (set-frame-font (font-spec :name writing-font :size writing-font-size))
   (writeroom-mode))
 
