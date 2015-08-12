@@ -8,7 +8,7 @@
 
 (defvar user-home
   (case system-type
-    ((cygwin) "/home/William.Yao/")
+    ((cygwin) "/home/william/")
     ((linux gnu/linux) "/home/william/")
     ((darwin) "/Users/william/")))
 
