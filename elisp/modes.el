@@ -30,6 +30,7 @@
   (abbrev-mode)
   (paren-face-mode)
   (hs-minor-mode)
+  (company-mode)
   
   (column-marker-1 75)
 
@@ -62,3 +63,17 @@
 	    (when (member system-type '(cygwin linux gnu/linux darwin))
 	      (setq eshell-path-env (concat "/usr/local/bin:" eshell-path-env))
 	      (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH"))))))
+
+;;; Rainbow mode
+(define-globalized-minor-mode global-rainbow-mode rainbow-mode
+  (lambda ()
+    (rainbow-mode)))
+
+(global-rainbow-mode)
+
+;;; Pending Delete mode
+(define-globalized-minor-mode global-delete-selection-mode delete-selection-mode
+  (lambda ()
+    (delete-selection-mode)))
+
+(global-delete-selection-mode)

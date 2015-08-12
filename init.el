@@ -1,6 +1,6 @@
 ;;;; William's .emacs file. Loads a bunch of libraries.
 ;;;; Fold personal code out into libraries, except for 
-;;;; small miscellaneous stuff.
+;;;; small miscellaneous stuff
 
 (require 'cl) ; I wish emacs was written in Common Lisp.
 
@@ -17,20 +17,17 @@
 (cl-flet ((add-path (path)
          (add-to-list 'load-path (concat emacs-home path))))
   (add-path "elisp") ; personal code
-  (add-path "libraries") ; third party code
-  (add-path "libraries/color-theme-6.6.0"))
+  (add-path "libraries") ; third party code 
+  (add-path "libraries/emacs-mainline/"))
 
 (require 'package)
 (add-to-list 'package-archives
 	     '("melpa-stable" . "http://stable.melpa.org/packages/") t)
-(add-to-list 'package-archives
-	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 (package-initialize)
 
 ;;; Third-party libraries.
 
-(require 'color-theme)
 (require 'company)
 (require 'sly)
 (require 'sly-company)
@@ -38,6 +35,10 @@
 (require 'magit)
 (require 'column-marker)
 (require 'paren-face)
+(require 'rainbow-mode)
+(require 'main-line)
+(require 'clean-mode-line)
+(require 'expand-region)
 
 ;;; Personal libraries.
 
@@ -46,8 +47,6 @@
 (load-library "timestamps")
 (load-library "window-manipulation")
 (load-library "writing")
-
-(load-library "customize") ; I keep customizes in a separate file.
 
 (load-library "keybinds")
 (load-library "modes")
@@ -70,20 +69,28 @@
       (remq 'process-kill-buffer-query-function
 	    kill-buffer-query-functions))
 
-(setq sentence-end "[\\.;:!?] ")
+(setq-default sentence-end "[\\.;:!?] ")
+
+(setq-default indent-tabs-mode nil
+              tab-width 4)
 
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode)   (tool-bar-mode   -1))
 (if (fboundp 'menu-bar-mode)   (menu-bar-mode   -1))
 
-(set-frame-font (font-spec :name "Anonymous Pro"
-			   :size 10))
+(set-frame-font (font-spec :name "Ubuntu Mono derivative Powerline"
+                           :size 12))
 
-(color-theme-initialize)
-(color-theme-charcoal-black)
+(setq ns-use-srgb-colorspace nil) ; for powerline separators
+
+(require 'soft-morning-theme)
+
+(setq truncate-lines t)
 
 (toggle-frame-fullscreen)
 
 (setq inhibit-splash-screen t)
+
+(load-library "customize") ; I keep customizes in a separate file.
 
 (eshell) ; A shell is just too useful, no matter what.

@@ -4,3 +4,6 @@
 
 (custom-set-variables
  '(writeroom-width 65))
+
+(custom-set-faces
+ `(mode-line ((t (:foreground "#222" :background "OliveDrab3")))))
