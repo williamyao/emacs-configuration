@@ -7,7 +7,7 @@
 ;;; Paths setup.
 
 ;; (defvar user-home
-;;   (case system-type
+;;   (cl-case system-type
 ;;     ((cygwin) "/home/william/")
 ;;     ((linux gnu/linux) "/home/william/")
 ;;     ((darwin) "/Users/william/")))
@@ -24,7 +24,9 @@
   (add-path "libraries") ; third party code 
   (add-path "libraries/emacs-mainline/"))
 
-(require 'cask "/usr/local/Cellar/cask/0.7.2_1/cask.el")
+(require 'cask (cl-case system-type
+                 (darwin "/usr/local/Cellar/cask/0.7.2_1/cask.el")
+                 (otherwise (home-path ".cask/cask.el"))))
 (cask-initialize)
 (require 'pallet)
 (pallet-mode t)

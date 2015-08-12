@@ -16,3 +16,11 @@ cd
 ```
 
 Happy hacking!
+
+##Notes
+
+The init file tries to adjust to where Cask is installed, but it may fail. Edit `init.el` if you get errors about not being able to load `cask.el`.
+
+It also uses `~` as the home directory; this may fail in certain systems. Edit `user-home` in `init.el` if this is the case.
+
+To adjust the font, look in `elisp/general-configuration.el`.
