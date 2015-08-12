@@ -6,8 +6,9 @@
 
 (define-derived-mode writing-mode text-mode "Writing"
   "Enter a new frame to edit text, with no distractions."
-  (make-frame)
-  (set-frame-font (font-spec :name writing-font :size writing-font-size))
+  (when (display-graphic-p nil)
+    (make-frame)
+    (set-frame-font (font-spec :name writing-font :size writing-font-size)))
   (writeroom-mode))
 
 ;;;; Specific file types for text writing.
