@@ -67,5 +67,3 @@
 (load-library "customize") ; I keep customizes in a separate file.
 
 (toggle-frame-fullscreen)
-
-(eshell) ; A shell is just too useful, no matter what.
