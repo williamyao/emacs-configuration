@@ -3,6 +3,7 @@
 
 (depends-on "column-marker")
 (depends-on "company")
+(depends-on "dash-at-point")
 (depends-on "expand-region")
 (depends-on "magit")
 (depends-on "pallet")
@@ -11,5 +12,6 @@
 (depends-on "rainbow-mode")
 (depends-on "sly")
 (depends-on "sly-company")
+(depends-on "smex")
 (depends-on "soft-morning-theme")
 (depends-on "writeroom-mode")

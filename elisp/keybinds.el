@@ -2,7 +2,8 @@
 
 ;;;; Updated 2015-08-05
 
-(global-set-key (kbd "C-x C-m") 'execute-extended-command)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "C-x C-m") 'smex)
 
 (global-set-key (kbd "C-w") 'backward-kill-word)
 (global-set-key (kbd "C-x C-k") 'kill-region)
@@ -21,6 +22,8 @@
 (global-set-key (kbd "M-v") 'scroll-smoothly-down-command)
 
 (global-set-key (kbd "M-h") 'er/expand-region)
+
+(global-set-key (kbd "C-c C-d M-h") 'dash-at-point)
 
 (global-unset-key (kbd "RET"))
 (global-unset-key (kbd "C-x m"))

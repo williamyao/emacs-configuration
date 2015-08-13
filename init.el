@@ -37,6 +37,7 @@
 
 (require 'column-marker)
 (require 'company)
+(require 'dash-at-point)
 (require 'expand-region)
 (require 'magit)
 (require 'paren-face)
@@ -44,6 +45,7 @@
 (require 'rainbow-mode)
 (require 'sly)
 (require 'sly-company)
+(require 'smex)
 (require 'soft-morning-theme)
 (require 'writeroom-mode)
 (require 'soft-morning-theme)
@@ -67,3 +69,4 @@
 (load-library "customize") ; I keep customizes in a separate file.
 
 (toggle-frame-fullscreen)
+
