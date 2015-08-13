@@ -4,6 +4,7 @@
 (depends-on "column-marker")
 (depends-on "company")
 (depends-on "dash-at-point")
+(depends-on "drag-stuff")
 (depends-on "expand-region")
 (depends-on "magit")
 (depends-on "pallet")

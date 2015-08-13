@@ -1,19 +1,21 @@
 (defvar mode-line-cleaner-alist
-  `((auto-complete-mode . " α")
+  `(;; Minor modes
+    (auto-complete-mode . " α")
     (yas/minor-mode . " υ")
     (paredit-mode . " ()")
     (eldoc-mode . "")
     (abbrev-mode . "")
+    (drag-stuff-mode . "")
+    (hi-lock-mode . "")
+    (hs-minor-mode . "")
+    (rainbow-mode . "")
+    (company-mode . " cmpl")
     ;; Major modes
     (lisp-interaction-mode . "λ")
-    (hi-lock-mode . "")
     (python-mode . "Py")
     (emacs-lisp-mode . "Eλ")
     (lisp-mode . "λ")
-    (hs-minor-mode . "")
-    (nxhtml-mode . "nx")
-    (rainbow-mode . "")
-    (company-mode . " cmpl"))
+    (nxhtml-mode . "nx"))
   "Alist for `clean-mode-line'.
 
 When you add a new element to the alist, keep in mind that you

@@ -21,8 +21,14 @@
 ;;; Text
 (add-hook 'text-mode-hook (lambda () (visual-line-mode)))
 
-;;; Lisp
+;;; Paredit
+;; prevents clashes with drag-stuff
+(eval-after-load 'paredit
+  '(progn
+     (define-key paredit-mode-map (kbd "<M-up>") nil)
+     (define-key paredit-mode-map (kbd "<M-down>") nil)))
 
+;;; Lisp
 (setq inferior-lisp-program "/usr/local/bin/ccl")
 
 (defun lisp-mode-customization ()
@@ -64,22 +70,21 @@
 	      (setq eshell-path-env (concat "/usr/local/bin:" eshell-path-env))
 	      (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH"))))))
 
-;;; Rainbow mode
+;;; Rainbow
 (define-globalized-minor-mode global-rainbow-mode rainbow-mode
   (lambda ()
     (rainbow-mode)))
 
 (global-rainbow-mode)
 
-;;; Pending Delete mode
+;;; Pending Delete
 (define-globalized-minor-mode global-delete-selection-mode delete-selection-mode
   (lambda ()
     (delete-selection-mode)))
 
 (global-delete-selection-mode)
 
-;;; ISearch mode
-
+;;; ISearch 
 (defadvice isearch-repeat (after isearch-no-fail activate)
   (unless isearch-success
     (ad-disable-advice 'isearch-repeat 'after 'isearch-no-fail)
@@ -87,3 +92,10 @@
     (isearch-repeat (if isearch-forward 'forward))
     (ad-enable-advice 'isearch-repeat 'after 'isearch-no-fail)
     (ad-activate 'isearch-repeat)))
+
+;;; Drag Stuff
+(define-globalized-minor-mode global-drag-stuff-mode drag-stuff-mode
+  (lambda ()
+    (drag-stuff-mode t)))
+
+(global-drag-stuff-mode t)

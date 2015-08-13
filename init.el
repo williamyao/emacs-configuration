@@ -38,6 +38,7 @@
 (require 'column-marker)
 (require 'company)
 (require 'dash-at-point)
+(require 'drag-stuff)
 (require 'expand-region)
 (require 'magit)
 (require 'paren-face)
