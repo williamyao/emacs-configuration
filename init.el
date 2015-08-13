@@ -69,5 +69,5 @@
  
 (load-library "customize") ; I keep customizes in a separate file.
 
-(toggle-frame-fullscreen)
-
+(when (fboundp 'toggle-frame-fullscreen)
+  (toggle-frame-fullscreen))
