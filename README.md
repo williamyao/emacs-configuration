@@ -15,6 +15,9 @@ cd
 && cask install
 ```
 
+![Screen shot of my emacs. ](https://cloud.githubusercontent.com/assets/5668019/9239755/6660c946-4124-11e5-878f-db4cd5481dfd.png)
+
+
 Happy hacking!
 
 ##Notes
