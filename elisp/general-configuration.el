@@ -21,7 +21,7 @@
 (if (fboundp 'menu-bar-mode)   (menu-bar-mode   -1))
 
 (set-frame-font (font-spec :name "Ubuntu Mono"
-                           :size 10))
+                           :size 12))
 
 (when (eql system-type 'darwin)
   (setq ns-use-srgb-colorspace nil)) ; for powerline separators
