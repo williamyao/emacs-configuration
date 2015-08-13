@@ -49,7 +49,6 @@
 (require 'smex)
 (require 'soft-morning-theme)
 (require 'writeroom-mode)
-(require 'soft-morning-theme)
 
 ;;; Third-party libraries.
 
