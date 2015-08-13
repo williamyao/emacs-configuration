@@ -1,4 +1,4 @@
-(defcustom writing-font "Georgia"
+(defcustom writing-font "Optima"
   "The font used when in `writing-mode'.")
 
 (defcustom writing-font-size 16
