@@ -15,4 +15,5 @@
 (depends-on "sly-company")
 (depends-on "smex")
 (depends-on "soft-morning-theme")
+(depends-on "vlf")
 (depends-on "writeroom-mode")

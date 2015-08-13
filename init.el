@@ -48,6 +48,7 @@
 (require 'sly-company)
 (require 'smex)
 (require 'soft-morning-theme)
+(require 'vlf)
 (require 'writeroom-mode)
 
 ;;; Third-party libraries.
