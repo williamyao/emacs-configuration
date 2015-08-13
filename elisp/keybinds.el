@@ -2,7 +2,7 @@
 
 ;;;; Updated 2015-08-05
 
-(when (fbound 'windmove-default-keybindings)
+(when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
 
 (global-set-key (kbd "M-x") 'smex)
