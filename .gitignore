@@ -1,7 +1,7 @@
-#*#
 *~
-.DS_Store
-eshell
+\#*\#
 ido.last
-elpa
 .cask
+eshell
+auto-save-list
+smex-items
