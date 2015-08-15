@@ -21,7 +21,8 @@
 (cl-flet ((add-path (path)
             (add-to-list 'load-path (concat emacs-home path))))
   (add-path "elisp") ; personal code
-  (add-path "libraries") ; third party code 
+  (add-path "libraries") ; third party code
+  (add-path "libraries/color-theme-6.6.0/")
   (add-path "libraries/emacs-mainline/"))
 
 (require 'cask (cl-case system-type
@@ -32,6 +33,14 @@
 (pallet-mode t)
 
 (load-library "general-configuration") ; mode-agnostic configuration
+
+;;; Color theme.
+(if (display-graphic-p)
+    (require 'soft-morning-theme) ; soft-morning causes problems on TTY
+    (progn
+      (load-library "color-theme")
+      (color-theme-initialize)
+      (color-theme-charcoal-black)))
 
 ;;; Cask libraries.
 
@@ -47,7 +56,6 @@
 (require 'sly)
 (require 'sly-company)
 (require 'smex)
-(require 'soft-morning-theme)
 (require 'vlf)
 (require 'writeroom-mode)
 
