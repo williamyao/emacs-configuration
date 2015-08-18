@@ -48,6 +48,7 @@
 (require 'company)
 (require 'dash-at-point)
 (require 'drag-stuff)
+(require 'elpy)
 (require 'expand-region)
 (require 'magit)
 (require 'paren-face)
