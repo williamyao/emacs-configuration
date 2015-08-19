@@ -5,6 +5,8 @@
 (setq ring-bell-function (lambda ()))
 (setq show-help-function nil)
 
+(mouse-wheel-mode -1)
+
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (setq kill-buffer-query-functions
