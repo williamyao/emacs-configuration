@@ -38,7 +38,9 @@
   (hs-minor-mode 1)
   (company-mode 1)
   
-  (column-marker-1 75)
+  (make-local-variable 'fci-rule-column)
+  (setq fci-rule-column 80)
+  (fci-mode 1)
 
   (set-face-foreground 'column-marker-1 "red")
   (set-face-background 'column-marker-1 nil)

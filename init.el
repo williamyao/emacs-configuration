@@ -44,12 +44,12 @@
 
 ;;; Cask libraries.
 
-(require 'column-marker)
 (require 'company)
 (require 'dash-at-point)
 (require 'drag-stuff)
 (require 'elpy)
 (require 'expand-region)
+(require 'fill-column-indicator)
 (require 'magit)
 (require 'paren-face)
 (require 'paredit)

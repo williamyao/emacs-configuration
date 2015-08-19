@@ -2,12 +2,12 @@
 (source melpa)
 
 (depends-on "async")
-(depends-on "column-marker")
 (depends-on "company")
 (depends-on "dash-at-point")
 (depends-on "drag-stuff")
 (depends-on "elpy")
 (depends-on "expand-region")
+(depends-on "fill-column-indicator")
 (depends-on "git-commit")
 (depends-on "magit")
 (depends-on "magit-popup")
