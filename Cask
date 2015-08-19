@@ -5,7 +5,6 @@
 (depends-on "company")
 (depends-on "dash-at-point")
 (depends-on "drag-stuff")
-(depends-on "elpy")
 (depends-on "expand-region")
 (depends-on "fill-column-indicator")
 (depends-on "git-commit")
