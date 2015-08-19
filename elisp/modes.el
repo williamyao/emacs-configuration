@@ -15,11 +15,11 @@
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
 (add-hook 'erc-mode-hook
 	  (lambda ()
-	    (erc-scrolltobottom-mode)
+	    (erc-scrolltobottom-mode 1)
 	    (setq erc-input-line-position -2)))
 
 ;;; Text
-(add-hook 'text-mode-hook (lambda () (visual-line-mode)))
+(add-hook 'text-mode-hook (lambda () (visual-line-mode 1)))
 
 ;;; Paredit
 ;; prevents clashes with drag-stuff
@@ -32,11 +32,11 @@
 (setq inferior-lisp-program "/usr/local/bin/ccl")
 
 (defun lisp-mode-customization ()
-  (paredit-mode)
-  (abbrev-mode)
-  (paren-face-mode)
-  (hs-minor-mode)
-  (company-mode)
+  (paredit-mode 1)
+  (abbrev-mode 1)
+  (paren-face-mode 1)
+  (hs-minor-mode 1)
+  (company-mode 1)
   
   (column-marker-1 75)
 
@@ -57,7 +57,7 @@
 
 (add-hook 'lisp-mode-hook 
 	  (lambda ()
-	    (sly-mode)
+	    (sly-mode 1)
 	    (lisp-mode-customization)))
 
 ;;; Show Paren
@@ -73,16 +73,16 @@
 ;;; Rainbow
 (define-globalized-minor-mode global-rainbow-mode rainbow-mode
   (lambda ()
-    (rainbow-mode)))
+    (rainbow-mode 1)))
 
-(global-rainbow-mode)
+(global-rainbow-mode 1)
 
 ;;; Pending Delete
 (define-globalized-minor-mode global-delete-selection-mode delete-selection-mode
   (lambda ()
-    (delete-selection-mode)))
+    (delete-selection-mode 1)))
 
-(global-delete-selection-mode)
+(global-delete-selection-mode 1)
 
 ;;; ISearch 
 (defadvice isearch-repeat (after isearch-no-fail activate)
@@ -96,6 +96,6 @@
 ;;; Drag Stuff
 (define-globalized-minor-mode global-drag-stuff-mode drag-stuff-mode
   (lambda ()
-    (drag-stuff-mode t)))
+    (drag-stuff-mode 1)))
 
-(global-drag-stuff-mode t)
+(global-drag-stuff-mode 1)
