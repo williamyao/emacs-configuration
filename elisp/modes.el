@@ -42,9 +42,6 @@
   (setq fci-rule-column 80)
   (fci-mode 1)
 
-  (set-face-foreground 'column-marker-1 "red")
-  (set-face-background 'column-marker-1 nil)
-
   (local-set-key (kbd "C-w") 'paredit-backward-kill-word)
   (local-set-key (kbd "C-M-i") 'company-complete)
   (local-set-key (kbd "<C-tab>") 'hs-toggle-hiding)
