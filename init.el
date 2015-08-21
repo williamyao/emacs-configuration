@@ -52,6 +52,7 @@
 (require 'magit)
 (require 'paren-face)
 (require 'paredit)
+(require 'projectile)
 (require 'rainbow-mode)
 (require 'sly)
 (require 'sly-company)

@@ -13,6 +13,7 @@
 (depends-on "pallet")
 (depends-on "paredit")
 (depends-on "paren-face")
+(depends-on "projectile")
 (depends-on "rainbow-mode")
 (depends-on "sly")
 (depends-on "sly-company")
