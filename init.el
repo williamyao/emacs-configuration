@@ -35,12 +35,7 @@
 (load-library "general-configuration") ; mode-agnostic configuration
 
 ;;; Color theme.
-(if (display-graphic-p)
-    (require 'soft-morning-theme) ; soft-morning causes problems on TTY
-    (progn
-      (load-library "color-theme")
-      (color-theme-initialize)
-      (color-theme-charcoal-black)))
+(require 'soft-morning-theme)
 
 ;;; Cask libraries.
 
