@@ -58,7 +58,8 @@
 ;;; Third-party libraries.
 
 (require 'main-line)
-(require 'clean-mode-line)
+(when (display-graphic-p)
+  (require 'clean-mode-line))
 
 ;;; Personal libraries.
 
