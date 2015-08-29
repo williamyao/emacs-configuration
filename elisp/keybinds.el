@@ -8,6 +8,9 @@
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "C-x C-m") 'smex)
 
+(global-set-key (kbd "C-M-,") 'beginning-of-buffer)
+(global-set-key (kbd "C-M-.") 'end-of-buffer)
+
 (global-set-key (kbd "C-w") 'backward-kill-word)
 (global-set-key (kbd "C-x C-k") 'kill-region)
 
