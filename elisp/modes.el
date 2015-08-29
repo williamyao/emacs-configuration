@@ -1,15 +1,22 @@
 ;;;; Configuration for various modes.
 
-;;;; Updated 2015-08-05
+;;;; Updated 2015-08-29
 
 ;;; IDO
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
 (ido-mode 1)
-(setq ido-use-filename-at-point 'guess)
+(ido-everywhere 1)
+(flx-ido-mode 1)
+;; disable ido faces to see flx highlights.
+(setq ido-enable-flex-matching t)
+(setq ido-use-faces nil)
 (setq ido-create-new-buffer 'always)
 (setq ido-file-extensions-order
       '(".lisp" ".md" ".asd"))
+(defadvice ido-find-file (after find-file-sudo activate)
+  "Find file as root if necessary."
+  (unless (and buffer-file-name
+               (file-writable-p buffer-file-name))
+    (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
 ;;; ERC
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
@@ -20,6 +27,14 @@
 
 ;;; Text
 (add-hook 'text-mode-hook (lambda () (visual-line-mode 1)))
+
+;;; Company
+(add-hook 'company-completion-started-hook
+          (lambda (a) (fci-mode 0)))
+(add-hook 'company-completion-cancelled-hook
+          (lambda (a) (fci-mode 1)))
+(add-hook 'company-completion-finished-hook
+          (lambda (a) (fci-mode 1)))
 
 ;;; Paredit
 ;; prevents clashes with drag-stuff

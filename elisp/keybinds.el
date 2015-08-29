@@ -28,6 +28,9 @@
 
 (global-set-key (kbd "C-c C-d M-h") 'dash-at-point)
 
+(global-set-key (kbd "C-x M-f") 'projectile-find-file)
+(global-set-key (kbd "C-x M-b") 'projectile-switch-to-buffer)
+
 (global-unset-key (kbd "RET"))
 (global-unset-key (kbd "C-x m"))
 (global-unset-key (kbd "C-x C-b"))

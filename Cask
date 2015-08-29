@@ -7,6 +7,7 @@
 (depends-on "drag-stuff")
 (depends-on "expand-region")
 (depends-on "fill-column-indicator")
+(depends-on "flx-ido")
 (depends-on "git-commit")
 (depends-on "magit")
 (depends-on "magit-popup")
