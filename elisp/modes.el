@@ -52,6 +52,7 @@
   (paren-face-mode 1)
   (hs-minor-mode 1)
   (company-mode 1)
+  (projectile-mode 1)
   
   (make-local-variable 'fci-rule-column)
   (setq fci-rule-column 80)
