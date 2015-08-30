@@ -108,11 +108,11 @@
   "Alternative mode line formatting with xpm-bitmap separators"
   :group 'mode-line)
 
-(defcustom main-line-color1 "grey50"
+(defcustom main-line-color1 "grey38"
   "Mainline color background 1"
   :group 'main-line)
 
-(defcustom main-line-color2 "grey80"
+(defcustom main-line-color2 "grey65"
   "Mainline color background 2"
   :group 'main-line)
 
@@ -1297,6 +1297,15 @@ install the memoized function over the original function."
 (defmain-line column "%3c")
 (defmain-line percent "%6p")
 
+(defmain-line project
+  (if (require 'projectile :nofile :noerror)
+      (let ((name (projectile-project-name)))
+        (if (and (symbol-value 'projectile-mode)
+                 (not (string-equal name "-")))
+            (format "in project %s" (projectile-project-name))
+            ""))
+      ""))
+
 (defmain-line narrow (let (real-point-min real-point-max)
                       (save-excursion
                         (save-restriction
@@ -1338,13 +1347,18 @@ install the memoized function over the original function."
                 (main-line-major-mode     'left        main-line-color1  )
                 (main-line-minor-modes    'left        main-line-color1  )
                 (main-line-narrow         'left        main-line-color1   main-line-color2  )
-;;              (main-line-vc             'center                        main-line-color2  )
-                (main-line-make-fill                                     main-line-color2  )
+                ;;              (main-line-vc             'center                        main-line-color2  )
+                (main-line-make-text      " "          main-line-color2)
+                (main-line-project        'center      main-line-color2   "black")
+                (main-line-make-fill                   main-line-color2)
                 (main-line-row            'right       main-line-color1   main-line-color2  )
                 (main-line-make-text      ":"          main-line-color1  )
                 (main-line-column         'right       main-line-color1  )
                 (main-line-percent-xpm    'right  nil  main-line-color1  )               
                 (main-line-make-text      "  "    nil  )))))
+
+(setq minor-mode-alist (remove (assoc 'projectile-mode minor-mode-alist)
+                               minor-mode-alist))
 
 (provide 'main-line)
 
