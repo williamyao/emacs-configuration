@@ -11,6 +11,7 @@
 (depends-on "git-commit")
 (depends-on "magit")
 (depends-on "magit-popup")
+(depends-on "page-break-lines")
 (depends-on "pallet")
 (depends-on "paredit")
 (depends-on "paren-face")

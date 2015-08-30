@@ -30,11 +30,17 @@
 
 ;;; Company
 (add-hook 'company-completion-started-hook
-          (lambda (a) (fci-mode 0)))
+          (lambda (a)
+            (fci-mode 0)
+            (page-break-lines-mode 0)))
 (add-hook 'company-completion-cancelled-hook
-          (lambda (a) (fci-mode 1)))
+          (lambda (a)
+            (fci-mode 1)
+            (page-break-lines-mode 1)))
 (add-hook 'company-completion-finished-hook
-          (lambda (a) (fci-mode 1)))
+          (lambda (a)
+            (fci-mode 1)
+            (page-break-lines-mode 1)))
 
 ;;; Paredit
 ;; prevents clashes with drag-stuff
