@@ -120,3 +120,6 @@
     (drag-stuff-mode 1)))
 
 (global-drag-stuff-mode 1)
+
+;;; Page Break Lines mode
+(global-page-break-lines-mode)
