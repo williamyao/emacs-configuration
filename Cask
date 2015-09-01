@@ -1,7 +1,6 @@
 (source gnu)
 (source melpa)
 
-(depends-on "async")
 (depends-on "company")
 (depends-on "dash-at-point")
 (depends-on "drag-stuff")
@@ -22,5 +21,4 @@
 (depends-on "smex")
 (depends-on "soft-morning-theme")
 (depends-on "vlf")
-(depends-on "with-editor")
 (depends-on "writeroom-mode")
