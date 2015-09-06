@@ -47,18 +47,26 @@
 
 (define-abbrev-table 'help-mode-abbrev-table '())
 
+(define-abbrev-table 'ibuffer-mode-abbrev-table '())
+
+(define-abbrev-table 'in-package '())
+
 (define-abbrev-table 'lisp-mode-abbrev-table
   '(
     ("dfc" "define-constant" nil 1)
-    ("dfg" "defgeneric" nil 0)
-    ("dfm" "defmethod" nil 0)
-    ("dfn" "defun" nil 1)
-    ("dfp" "defparameter" nil 0)
-    ("dfv" "defvar" nil 0)
+    ("dfg" "defgeneric" nil 5)
+    ("dfm" "defmethod" nil 9)
+    ("dfmc" "defmacro" nil 0)
+    ("dfn" "defun" nil 31)
+    ("dfp" "defparameter" nil 1)
+    ("dfr" "record:define" nil 1)
+    ("dfv" "defvar" nil 1)
     ("dsb" "destructuring-bind" nil 0)
-    ("fc" "funcall" nil 3)
+    ("fc" "funcall" nil 5)
+    ("fmt" "format" nil 2)
+    ("fmtn" "format nil" nil 16)
     ("fn" "lambda" nil 1)
-    ("mvb" "multiple-value-bind" nil 0)
+    ("mvb" "multiple-value-bind" nil 1)
     ("mvl" "multiple-value-list" nil 0)
    ))
 
@@ -74,11 +82,25 @@
 
 (define-abbrev-table 'magit-log-mode-abbrev-table '())
 
+(define-abbrev-table 'magit-log-select-mode-abbrev-table '())
+
 (define-abbrev-table 'magit-mode-abbrev-table '())
+
+(define-abbrev-table 'magit-popup-mode-abbrev-table '())
+
+(define-abbrev-table 'magit-popup-sequence-mode-abbrev-table '())
 
 (define-abbrev-table 'magit-process-mode-abbrev-table '())
 
 (define-abbrev-table 'magit-reflog-mode-abbrev-table '())
+
+(define-abbrev-table 'magit-refs-mode-abbrev-table '())
+
+(define-abbrev-table 'magit-revision-mode-abbrev-table '())
+
+(define-abbrev-table 'magit-stash-mode-abbrev-table '())
+
+(define-abbrev-table 'magit-stashes-mode-abbrev-table '())
 
 (define-abbrev-table 'magit-status-mode-abbrev-table '())
 
@@ -130,6 +152,24 @@
 
 (define-abbrev-table 'slime-xref-mode-abbrev-table '())
 
+(define-abbrev-table 'sly-apropos-mode-abbrev-table '())
+
+(define-abbrev-table 'sly-connection-list-mode-abbrev-table '())
+
+(define-abbrev-table 'sly-db-mode-abbrev-table '())
+
+(define-abbrev-table 'sly-fuzzy-completions-mode-abbrev-table '())
+
+(define-abbrev-table 'sly-inspector-mode-abbrev-table '())
+
+(define-abbrev-table 'sly-mrepl-mode-abbrev-table '())
+
+(define-abbrev-table 'sly-thread-control-mode-abbrev-table '())
+
+(define-abbrev-table 'sly-trace-dialog-mode-abbrev-table '())
+
+(define-abbrev-table 'sly-xref-mode-abbrev-table '())
+
 (define-abbrev-table 'special-mode-abbrev-table '())
 
 (define-abbrev-table 'speedbar-mode-abbrev-table '())
@@ -145,4 +185,6 @@
 (define-abbrev-table 'vc-git-log-edit-mode-abbrev-table '())
 
 (define-abbrev-table 'vc-git-log-view-mode-abbrev-table '())
+
+(define-abbrev-table 'writing-mode-abbrev-table '())
 
