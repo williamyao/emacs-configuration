@@ -28,13 +28,11 @@
 (when (eql system-type 'darwin)
   (setq ns-use-srgb-colorspace nil)) ; for powerline separators
 
-(setq truncate-lines t)
+(setq-default truncate-lines t)
 
-(setq backup-by-copying t
+(setq-default backup-by-copying t
       backup-directory-alist `(("." . ,(home-path ".backups/")))
       delete-old-versions t
       kept-new-versions 6
       kept-old-versions 2
       version-control t)
-
-(setq gc-cons-threshold 20000000)
