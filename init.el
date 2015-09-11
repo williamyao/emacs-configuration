@@ -65,7 +65,6 @@
 ;;; Personal libraries.
 
 (load-library "sexp-manipulation")
-(load-library "smooth-scrolling")
 (load-library "timestamps")
 (load-library "window-manipulation")
 (load-library "writing")

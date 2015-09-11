@@ -24,9 +24,6 @@
 
 (global-set-key (kbd "C-c C-d C-s") 'swap-window-buffers)
 
-(global-set-key (kbd "C-v") 'scroll-smoothly-up-command)
-(global-set-key (kbd "M-v") 'scroll-smoothly-down-command)
-
 (global-set-key (kbd "M-h") 'er/expand-region)
 
 (global-set-key (kbd "C-c C-d M-h") 'dash-at-point)
