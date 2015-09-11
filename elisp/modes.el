@@ -29,25 +29,40 @@
 (add-hook 'text-mode-hook (lambda () (visual-line-mode 1)))
 
 ;;; Company
-(add-hook 'company-completion-started-hook
-          (lambda (a)
-            (fci-mode 0)
-            (page-break-lines-mode 0)))
-(add-hook 'company-completion-cancelled-hook
-          (lambda (a)
-            (fci-mode 1)
-            (page-break-lines-mode 1)))
-(add-hook 'company-completion-finished-hook
-          (lambda (a)
-            (fci-mode 1)
-            (page-break-lines-mode 1)))
+(eval-after-load 'company
+  '(progn
+     (add-hook 'company-completion-started-hook
+               (lambda (a)
+                 (fci-mode 0)
+                 (page-break-lines-mode 0)))
+     (add-hook 'company-completion-cancelled-hook
+               (lambda (a)
+                 (fci-mode 1)
+                 (page-break-lines-mode 1)))
+     (add-hook 'company-completion-finished-hook
+               (lambda (a)
+                 (fci-mode 1)
+                 (page-break-lines-mode 1)))
+
+     (define-key company-mode-map (kbd "C-M-i") 'company-complete)
+
+     (global-company-mode 1)))
+
+;;; FCI
+(setq-default fci-rule-column 80)
+
+;;; HS
+(eval-after-load 'hideshow
+  '(define-key hs-minor-mode-map (kbd "<C-tab>") 'hs-toggle-hiding))
 
 ;;; Paredit
-;; prevents clashes with drag-stuff
 (eval-after-load 'paredit
   '(progn
+     ;; prevent clashes with DRAG-STUFF
      (define-key paredit-mode-map (kbd "<M-up>") nil)
-     (define-key paredit-mode-map (kbd "<M-down>") nil)))
+     (define-key paredit-mode-map (kbd "<M-down>") nil)
+     
+     (define-key paredit-mode-map (kbd "C-w") 'paredit-backward-kill-word)))
 
 ;;; Lisp
 (setq inferior-lisp-program "/usr/local/bin/ccl")
@@ -57,16 +72,8 @@
   (abbrev-mode 1)
   (paren-face-mode 1)
   (hs-minor-mode 1)
-  (company-mode 1)
   (projectile-mode 1)
-  
-  (make-local-variable 'fci-rule-column)
-  (setq fci-rule-column 80)
   (fci-mode 1)
-
-  (local-set-key (kbd "C-w") 'paredit-backward-kill-word)
-  (local-set-key (kbd "C-M-i") 'company-complete)
-  (local-set-key (kbd "<C-tab>") 'hs-toggle-hiding)
 
   (hs-hide-all))
 
@@ -123,3 +130,24 @@
 
 ;;; Page Break Lines mode
 (global-page-break-lines-mode)
+
+;;; CC
+(require 'cc-mode)
+(setq-default c-basic-offset 4
+              c-default-style "linux")
+
+(modify-syntax-entry ?\< "(>" c-mode-syntax-table)
+(modify-syntax-entry ?\> ")<" c-mode-syntax-table)
+
+(define-key c-mode-base-map (kbd "C-j") 'newline-and-indent)
+
+(defun algol-like-customization ()
+  (fci-mode 1)
+  (hs-minor-mode 1)
+  (projectile-mode 1)
+  (abbrev-mode 1)
+
+  (hs-hide-all))
+
+(add-hook 'c-mode-hook 'algol-like-customization)
+(add-hook 'c-mode-hook (lambda () (flymake-mode 1)))
