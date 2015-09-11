@@ -160,3 +160,6 @@
     (dired-osx-mode 1)))
 
 (add-hook 'dired-mode-hook 'dired-customization)
+
+;;; Makefile
+(add-hook 'makefile-mode-hook (lambda () (projectile-mode 1)))
