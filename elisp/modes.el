@@ -153,5 +153,10 @@
 (add-hook 'c-mode-hook (lambda () (flymake-mode 1)))
 
 ;;; Dired
-(when (eql system-type 'darwin)
-  (add-hook 'dired-mode-hook (lambda () (dired-osx-mode 1))))
+(defun dired-customization ()
+  (dired-hide-details-mode 1)
+  
+  (when (eql system-type 'darwin)
+    (dired-osx-mode 1)))
+
+(add-hook 'dired-mode-hook 'dired-customization)
