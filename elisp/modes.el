@@ -151,3 +151,7 @@
 
 (add-hook 'c-mode-hook 'algol-like-customization)
 (add-hook 'c-mode-hook (lambda () (flymake-mode 1)))
+
+;;; Dired
+(when (eql system-type 'darwin)
+  (add-hook 'dired-mode-hook (lambda () (dired-osx-mode 1))))
