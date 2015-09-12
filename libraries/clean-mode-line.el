@@ -3,6 +3,7 @@
     (auto-complete-mode . " α")
     (yas/minor-mode . " υ")
     (paredit-mode . " ()")
+    (paredit-algol-like-mode . " {}")
     (eldoc-mode . "")
     (abbrev-mode . "")
     (drag-stuff-mode . "")
@@ -13,6 +14,7 @@
     (page-break-lines-mode . "")
     ;; Major modes
     (lisp-interaction-mode . "λ")
+    (c-mode . "C")
     (python-mode . "Py")
     (emacs-lisp-mode . "Eλ")
     (lisp-mode . "λ")
