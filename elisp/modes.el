@@ -62,7 +62,12 @@
      (define-key paredit-mode-map (kbd "<M-up>") nil)
      (define-key paredit-mode-map (kbd "<M-down>") nil)
      
-     (define-key paredit-mode-map (kbd "C-w") 'paredit-backward-kill-word)))
+     (define-key paredit-mode-map (kbd "C-w") 'paredit-backward-kill-word)
+
+     ;; I literally never use this functionality of Paredit, and
+     ;; it just gets in the way.
+     (defun paredit-space-for-delimiter-p (endp delimiter)
+       nil)))
 
 ;;; Lisp
 (setq inferior-lisp-program "/usr/local/bin/ccl")
