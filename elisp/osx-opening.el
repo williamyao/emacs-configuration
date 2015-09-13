@@ -13,8 +13,8 @@
   (defvar dired-osx-mode-map (make-sparse-keymap))
   (defvar dired-osx-lighter " OSX")
 
-  (define-key dired-osx-mode-map (kbd "o") 'dired-osx-open)
-  (define-key dired-osx-mode-map (kbd "@") 'dired-osx-open-directory-in-finder)
+  (define-key dired-osx-mode-map (kbd "<C-return>") 'dired-osx-open)
+  (define-key dired-osx-mode-map (kbd "<C-M-return>") 'dired-osx-open-directory-in-finder)
 
   (define-minor-mode dired-osx-mode
     "Minor mode for integrating Dired with OSX Finder and

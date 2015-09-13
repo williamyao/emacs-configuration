@@ -157,13 +157,40 @@
 (add-hook 'c-mode-hook (lambda () (flymake-mode 1)))
 
 ;;; Dired
+(setq-default dired-recursive-copies 'always)
+(setq-default dired-recursive-deletes 'always)
+(setq-default delete-by-moving-to-trash t)
+;;; TODO 2015-09-12 williamyaoh@gmail.com
+;;;  - Figure out what this would be on linux
+(setq-default trash-directory (cl-case system-type
+                                (darwin "~/.Trash/")
+                                ((linux gnu/linux) "~/.local/share/Trash/")))
+
 (defun dired-customization ()
   (dired-hide-details-mode 1)
   
   (when (eql system-type 'darwin)
     (dired-osx-mode 1)))
 
+(defun dired-maybe-find-file-other-window ()
+  "Visit directories in this window and files in another window."
+  (interactive)
+  (if (file-directory-p (dired-get-file-for-visit))
+      (dired-find-file)
+    (dired-find-file-other-window)))
+
+(define-key dired-mode-map (kbd "C-o") 'dired-omit-mode)
+(define-key dired-mode-map (kbd "e") nil)
+(define-key dired-mode-map (kbd "f") nil)
+(define-key dired-mode-map (kbd "<RET>") 'dired-maybe-find-file-other-window)
+
+(setq-default dired-omit-mode t)
+
+(setq-default dired-omit-files "^\\.")
+
 (add-hook 'dired-mode-hook 'dired-customization)
+
+(require 'dired+)
 
 ;;; Makefile
 (add-hook 'makefile-mode-hook (lambda () (projectile-mode 1)))

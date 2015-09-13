@@ -3,6 +3,7 @@
 
 (depends-on "company")
 (depends-on "dash-at-point")
+(depends-on "dired+")
 (depends-on "drag-stuff")
 (depends-on "expand-region")
 (depends-on "fill-column-indicator")
