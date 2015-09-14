@@ -65,7 +65,6 @@
 ;;; Personal libraries.
 
 (load-library "osx-opening")
-(load-library "paredit-algol-like-mode")
 (load-library "sexp-manipulation")
 (load-library "timestamps")
 (load-library "window-manipulation")

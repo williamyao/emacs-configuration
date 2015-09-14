@@ -153,7 +153,6 @@
   (fci-mode 1)
   (hs-minor-mode 1)
   (projectile-mode 1)
-  (paredit-algol-like-mode 1)
   (page-break-lines-mode 1)
   (abbrev-mode 1)
 
