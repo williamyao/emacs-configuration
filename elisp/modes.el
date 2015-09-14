@@ -18,6 +18,10 @@
                (file-writable-p buffer-file-name))
     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
+;;; Projectile
+(define-key (kbd "C-x M-f") 'projectile-find-file)
+(define-key (kbd "C-x M-b") 'projectile-switch-to-buffer)
+
 ;;; ERC
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
 (add-hook 'erc-mode-hook
@@ -45,6 +49,8 @@
                  (page-break-lines-mode 1)))
 
      (define-key company-mode-map (kbd "C-M-i") 'company-complete)
+
+     (setq company-backends (delete 'company-semantic company-backends))
 
      (global-company-mode 1)))
 

@@ -7,6 +7,7 @@
 
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "C-x C-m") 'smex)
+(global-set-key (kbd "C-x M-m") 'smex-major-mode-commands)
 
 (global-set-key (kbd "C-M-,") 'beginning-of-buffer)
 (global-set-key (kbd "C-M-.") 'end-of-buffer)
@@ -27,9 +28,6 @@
 (global-set-key (kbd "M-h") 'er/expand-region)
 
 (global-set-key (kbd "C-c C-d M-h") 'dash-at-point)
-
-(global-set-key (kbd "C-x M-f") 'projectile-find-file)
-(global-set-key (kbd "C-x M-b") 'projectile-switch-to-buffer)
 
 (global-unset-key (kbd "RET"))
 (global-unset-key (kbd "C-x m"))
