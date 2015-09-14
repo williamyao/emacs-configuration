@@ -195,47 +195,57 @@ in `text-mode'."
                                 (darwin "~/.Trash/")
                                 ((linux gnu/linux) "~/.local/share/Trash/")))
 
+(setq-default dired-omit-files "^\\.")
+
 (defun dired-customization ()
   (dired-hide-details-mode 1)
+  (dired-omit-mode 1)
   
   (when (eql system-type 'darwin)
     (dired-osx-mode 1)))
 
-(defun dired-maybe-find-file-other-window ()
-  "Visit directories in this window and files in another window."
-  (interactive)
+(defun maybe-dired-find-file-other-window (original &rest args)
+  "Wrapper for whatever the hell Dired is using at this particular
+point in time for opening files."
   (if (file-directory-p (dired-get-file-for-visit))
-      (dired-find-file)
+      (apply original args)
     (dired-find-file-other-window)))
 
-(defun eshell-run-text (text)
+(defun eshell-send-text (text)
+  "Send a command to the running eshell instance, or create
+another one if eshell is not running."
   (require 'eshell)
-  (let ((buf (current-buffer)))
-    (unless (get-buffer eshell-buffer-name)
-      (eshell))
-    (display-buffer eshell-buffer-name t)
-    (switch-to-buffer-other-window eshell-buffer-name)
+  
+  (unless (get-buffer eshell-buffer-name)
+    (eshell))
+  
+  (let ((buffer (current-buffer)))
+    (set-buffer eshell-buffer-name)
     (end-of-buffer)
     (eshell-kill-input)
     (insert text)
     (eshell-send-input)
     (end-of-buffer)
-    (switch-to-buffer-other-window buf)))
+    (set-buffer buffer)))
 
-;; (add-hook 'dired-before-readin-hook
-;;           (lambda ()
-;;             (eshell-run-text (format "cd \"%s\"" default-directory))))
-
-
+(add-hook 'dired-after-readin-hook
+          (lambda ()
+;;            (sit-for 0.05)
+            (eshell-send-text (format "cd \"%s\"" default-directory))))
 
 (add-hook 'dired-mode-hook 'dired-customization)
+(add-hook 'dired-mode-hook 'dired-omit-mode)
 
 (define-key dired-mode-map (kbd "C-o") 'dired-omit-mode)
 (define-key dired-mode-map (kbd "e") nil)
 (define-key dired-mode-map (kbd "f") nil)
-(define-key dired-mode-map (kbd "<RET>") 'dired-maybe-find-file-other-window)
 
 (require 'dired+)
+
+(advice-add 'diredp-find-file-reuse-dir-buffer
+            :around 'maybe-dired-find-file-other-window)
+
+(diredp-toggle-find-file-reuse-dir 1)
 
 ;;; Makefile
 (add-hook 'makefile-mode-hook (lambda () (projectile-mode 1)))
