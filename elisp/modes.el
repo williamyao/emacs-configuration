@@ -29,9 +29,6 @@
 	    (erc-scrolltobottom-mode 1)
 	    (setq erc-input-line-position -2)))
 
-;;; Text
-(add-hook 'text-mode-hook (lambda () (visual-line-mode 1)))
-
 ;;; Company
 (eval-after-load 'company
   '(progn
@@ -50,9 +47,7 @@
 
      (define-key company-mode-map (kbd "C-M-i") 'company-complete)
 
-     (setq company-backends (delete 'company-semantic company-backends))
-
-     (global-company-mode 1)))
+     (setq company-backends (delete 'company-semantic company-backends))))
 
 ;;; FCI
 (setq-default fci-rule-column 80)
@@ -60,6 +55,33 @@
 ;;; HS
 (eval-after-load 'hideshow
   '(define-key hs-minor-mode-map (kbd "<C-tab>") 'hs-toggle-hiding))
+
+;;; Text
+(add-hook 'text-mode-hook
+          (lambda ()
+            (auto-fill-mode)
+            (set-fill-column 72)))
+
+(defun text-mode-wrap-beginning-of-defun (original &rest args)
+  "Make `beginning-of-defun' behave like `backward-paragraph'
+in `text-mode'."
+  (if (memq major-mode '(text-mode writing-mode))
+      (apply #'backward-paragraph args)
+    (apply original args)))
+
+(defun text-mode-wrap-end-of-defun (original &rest args)
+  "Make `end-of-defun' behave like `forward-paragraph'
+in `text-mode'."
+  (if (memq major-mode '(text-mode writing-mode))
+      (apply #'forward-paragraph args)
+    (apply original args)))
+
+(advice-add 'beginning-of-defun
+            :around #'text-mode-wrap-beginning-of-defun)
+(advice-add 'end-of-defun
+            :around #'text-mode-wrap-end-of-defun)
+
+(define-key text-mode-map (kbd "C-M-t") 'transpose-sentences)
 
 ;;; Paredit
 (eval-after-load 'paredit
@@ -85,6 +107,7 @@
   (hs-minor-mode 1)
   (projectile-mode 1)
   (fci-mode 1)
+  (company-mode 1)
 
   (hs-hide-all))
 
@@ -155,6 +178,7 @@
   (projectile-mode 1)
   (page-break-lines-mode 1)
   (abbrev-mode 1)
+  (company-mode 1)
 
   (hs-hide-all))
 
@@ -181,7 +205,7 @@
   "Visit directories in this window and files in another window."
   (interactive)
   (if (file-directory-p (dired-get-file-for-visit))
-      (diredp-find-file-reuse-dir-buffer)
+      (dired-find-file)
     (dired-find-file-other-window)))
 
 (defun eshell-run-text (text)
@@ -198,22 +222,20 @@
     (end-of-buffer)
     (switch-to-buffer-other-window buf)))
 
-(add-hook 'dired-before-readin-hook
-          (lambda ()
-            (eshell-run-text (format "cd \"%s\"" default-directory))))
+;; (add-hook 'dired-before-readin-hook
+;;           (lambda ()
+;;             (eshell-run-text (format "cd \"%s\"" default-directory))))
 
-(setq-default dired-omit-mode t)
 
-(setq-default dired-omit-files "^\\.")
 
 (add-hook 'dired-mode-hook 'dired-customization)
-
-(require 'dired+)
 
 (define-key dired-mode-map (kbd "C-o") 'dired-omit-mode)
 (define-key dired-mode-map (kbd "e") nil)
 (define-key dired-mode-map (kbd "f") nil)
 (define-key dired-mode-map (kbd "<RET>") 'dired-maybe-find-file-other-window)
+
+(require 'dired+)
 
 ;;; Makefile
 (add-hook 'makefile-mode-hook (lambda () (projectile-mode 1)))
