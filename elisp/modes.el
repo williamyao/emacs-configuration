@@ -19,8 +19,8 @@
     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
 ;;; Projectile
-(define-key (kbd "C-x M-f") 'projectile-find-file)
-(define-key (kbd "C-x M-b") 'projectile-switch-to-buffer)
+(define-key projectile-mode-map (kbd "C-x M-f") 'projectile-find-file)
+(define-key projectile-mode-map (kbd "C-x M-b") 'projectile-switch-to-buffer)
 
 ;;; ERC
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
@@ -181,13 +181,26 @@
   "Visit directories in this window and files in another window."
   (interactive)
   (if (file-directory-p (dired-get-file-for-visit))
-      (dired-find-file)
+      (diredp-find-file-reuse-dir-buffer)
     (dired-find-file-other-window)))
 
-(define-key dired-mode-map (kbd "C-o") 'dired-omit-mode)
-(define-key dired-mode-map (kbd "e") nil)
-(define-key dired-mode-map (kbd "f") nil)
-(define-key dired-mode-map (kbd "<RET>") 'dired-maybe-find-file-other-window)
+(defun eshell-run-text (text)
+  (require 'eshell)
+  (let ((buf (current-buffer)))
+    (unless (get-buffer eshell-buffer-name)
+      (eshell))
+    (display-buffer eshell-buffer-name t)
+    (switch-to-buffer-other-window eshell-buffer-name)
+    (end-of-buffer)
+    (eshell-kill-input)
+    (insert text)
+    (eshell-send-input)
+    (end-of-buffer)
+    (switch-to-buffer-other-window buf)))
+
+(add-hook 'dired-before-readin-hook
+          (lambda ()
+            (eshell-run-text (format "cd \"%s\"" default-directory))))
 
 (setq-default dired-omit-mode t)
 
@@ -197,5 +210,13 @@
 
 (require 'dired+)
 
+(define-key dired-mode-map (kbd "C-o") 'dired-omit-mode)
+(define-key dired-mode-map (kbd "e") nil)
+(define-key dired-mode-map (kbd "f") nil)
+(define-key dired-mode-map (kbd "<RET>") 'dired-maybe-find-file-other-window)
+
 ;;; Makefile
 (add-hook 'makefile-mode-hook (lambda () (projectile-mode 1)))
+
+;;; HL Line
+(global-hl-line-mode 1)
