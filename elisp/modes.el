@@ -225,12 +225,10 @@ another one if eshell is not running."
     (eshell-kill-input)
     (insert text)
     (eshell-send-input)
-    (end-of-buffer)
     (set-buffer buffer)))
 
 (add-hook 'dired-after-readin-hook
           (lambda ()
-;;            (sit-for 0.05)
             (eshell-send-text (format "cd \"%s\"" default-directory))))
 
 (add-hook 'dired-mode-hook 'dired-customization)
