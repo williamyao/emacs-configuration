@@ -35,6 +35,7 @@
 
 (require 'auto-complete)
 (require 'ac-sly)
+(require 'company)
 (require 'dash-at-point)
 (require 'drag-stuff)
 (require 'expand-region)
@@ -54,6 +55,7 @@
 
 ;; (require 'main-line)
 (require 'main-line)
+(require 'ac-company)
 (when (display-graphic-p)
   (require 'clean-mode-line))
 

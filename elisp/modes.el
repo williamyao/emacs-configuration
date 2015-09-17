@@ -78,7 +78,12 @@ in `text-mode'."
 
   (hs-hide-all))
 
-(add-hook 'emacs-lisp-mode-hook 'lisp-mode-customization)
+(ac-company-define-source ac-source-company-elisp company-elisp)
+
+(add-hook 'emacs-lisp-mode-hook
+          (lambda ()
+            (lisp-mode-customization)
+            (add-to-list 'ac-sources 'ac-source-company-elisp)))
 
 ;;; SLY
 (add-hook 'sly-mode-hook

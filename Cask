@@ -3,6 +3,7 @@
 
 (depends-on "ac-sly")
 (depends-on "auto-complete")
+(depends-on "company")
 (depends-on "dash-at-point")
 (depends-on "dired+")
 (depends-on "drag-stuff")
