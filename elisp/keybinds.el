@@ -1,7 +1,5 @@
 ;;;; Personal keybindings. Load this file last.
 
-;;;; Updated 2015-08-05
-
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
 

@@ -71,6 +71,8 @@ in `text-mode'."
   (fci-mode 1)
   (auto-complete-mode 1)
 
+  (setup-tab-auto-complete)
+
   (hs-hide-all))
 
 (add-hook 'emacs-lisp-mode-hook 'lisp-mode-customization)
@@ -142,6 +144,8 @@ in `text-mode'."
   (page-break-lines-mode 1)
   (abbrev-mode 1)
   (auto-complete-mode 1)
+
+  (setup-tab-auto-complete)
 
   (hs-hide-all))
 
@@ -217,3 +221,16 @@ another one if eshell is not running."
 ;;; Helm
 (setq-default helm-split-window-in-side-p t)
 (setq-default helm-autoresize-max-height 30)
+
+;;; Auto Complete
+(setq-default ac-auto-start nil)
+(setq-default ac-dwim nil)
+
+(setq tab-always-indent 'complete)
+(add-to-list 'completion-styles 'initials t)
+(setq completion-cycle-threshold 5)
+
+(defun tab/auto-complete () #'auto-complete)
+
+(defun setup-tab-auto-complete ()
+  (add-to-list 'completion-at-point-functions 'tab/auto-complete))
