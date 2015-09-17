@@ -5,6 +5,8 @@
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
 
+(global-set-key (kbd "C-x C-m") 'execute-extended-command)
+
 (global-set-key (kbd "C-M-,") 'beginning-of-buffer)
 (global-set-key (kbd "C-M-.") 'end-of-buffer)
 
@@ -24,6 +26,11 @@
 (global-set-key (kbd "M-h") 'er/expand-region)
 
 (global-set-key (kbd "C-c C-d M-h") 'dash-at-point)
+
+(global-set-key (kbd "C-s") 'swiper)
+(global-set-key (kbd "C-r") 'swiper)
+(global-set-key (kbd "C-M-s") 'swiper)
+(global-set-key (kbd "C-M-r") 'swiper)
 
 (global-unset-key (kbd "RET"))
 (global-unset-key (kbd "C-x m"))

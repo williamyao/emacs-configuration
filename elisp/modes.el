@@ -1,9 +1,9 @@
 ;;;; Configuration for various modes.
 
 ;;; Projectile
-(define-key projectile-mode-map (kbd "C-x M-f") 'projectile-find-file)
-(define-key projectile-mode-map (kbd "C-x M-b") 'projectile-switch-to-buffer)
-
+(projectile-global-mode 1)
+(setq projectile-completion-system 'ivy)
+    
 ;;; ERC
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
 (add-hook 'erc-mode-hook
@@ -216,13 +216,4 @@ another one if eshell is not running."
 
 ;;; Helm
 (setq-default helm-split-window-in-side-p t)
-
-(define-globalized-minor-mode global-helm-mode helm-mode
-  (lambda ()
-    (helm-mode 1)
-    (helm-autoresize-mode 1)))
-
-(global-helm-mode 1)
-
-;;; Auto Complete
-(define-key ac-complete-mode-map (kbd "C-M-i") 'ac-complete-with-helm)
+(setq-default helm-autoresize-max-height 30)

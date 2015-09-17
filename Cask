@@ -1,7 +1,6 @@
 (source gnu)
 (source melpa)
 
-(depends-on "ac-helm")
 (depends-on "ac-sly")
 (depends-on "auto-complete")
 (depends-on "dash-at-point")
@@ -21,5 +20,6 @@
 (depends-on "rainbow-mode")
 (depends-on "sly")
 (depends-on "soft-morning-theme")
+(depends-on "swiper")
 (depends-on "vlf")
 (depends-on "writeroom-mode")
