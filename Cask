@@ -1,7 +1,9 @@
 (source gnu)
 (source melpa)
 
-(depends-on "company")
+(depends-on "ac-helm")
+(depends-on "ac-sly")
+(depends-on "auto-complete")
 (depends-on "dash-at-point")
 (depends-on "dired+")
 (depends-on "drag-stuff")
@@ -18,7 +20,6 @@
 (depends-on "projectile")
 (depends-on "rainbow-mode")
 (depends-on "sly")
-(depends-on "sly-company")
 (depends-on "soft-morning-theme")
 (depends-on "vlf")
 (depends-on "writeroom-mode")

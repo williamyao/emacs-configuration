@@ -39,7 +39,9 @@
 
 ;;; Cask libraries.
 
-(require 'company)
+(require 'auto-complete)
+(require 'ac-helm)
+(require 'ac-sly)
 (require 'dash-at-point)
 (require 'drag-stuff)
 (require 'expand-region)
@@ -51,7 +53,6 @@
 (require 'projectile)
 (require 'rainbow-mode)
 (require 'sly)
-(require 'sly-company)
 (require 'vlf)
 (require 'writeroom-mode)
 

@@ -11,26 +11,6 @@
 	    (erc-scrolltobottom-mode 1)
 	    (setq erc-input-line-position -2)))
 
-;;; Company
-(eval-after-load 'company
-  '(progn
-     (add-hook 'company-completion-started-hook
-               (lambda (a)
-                 (fci-mode 0)
-                 (page-break-lines-mode 0)))
-     (add-hook 'company-completion-cancelled-hook
-               (lambda (a)
-                 (fci-mode 1)
-                 (page-break-lines-mode 1)))
-     (add-hook 'company-completion-finished-hook
-               (lambda (a)
-                 (fci-mode 1)
-                 (page-break-lines-mode 1)))
-
-     (define-key company-mode-map (kbd "C-M-i") 'company-complete)
-
-     (setq company-backends (delete 'company-semantic company-backends))))
-
 ;;; FCI
 (setq-default fci-rule-column 80)
 
@@ -89,15 +69,16 @@ in `text-mode'."
   (hs-minor-mode 1)
   (projectile-mode 1)
   (fci-mode 1)
-  (company-mode 1)
+  (auto-complete-mode 1)
 
   (hs-hide-all))
 
 (add-hook 'emacs-lisp-mode-hook 'lisp-mode-customization)
 
 ;;; SLY
-(add-hook 'sly-mode-hook 'sly-company-mode)
-(add-to-list 'company-backends 'sly-company)
+(add-hook 'sly-mode-hook
+          (lambda ()
+            (set-up-sly-ac t)))
 
 (add-hook 'lisp-mode-hook 
 	  (lambda ()
@@ -160,7 +141,7 @@ in `text-mode'."
   (projectile-mode 1)
   (page-break-lines-mode 1)
   (abbrev-mode 1)
-  (company-mode 1)
+  (auto-complete-mode 1)
 
   (hs-hide-all))
 
@@ -242,3 +223,6 @@ another one if eshell is not running."
     (helm-autoresize-mode 1)))
 
 (global-helm-mode 1)
+
+;;; Auto Complete
+(define-key ac-complete-mode-map (kbd "C-M-i") 'ac-complete-with-helm)
