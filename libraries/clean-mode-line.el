@@ -1,5 +1,6 @@
 (defvar mode-line-cleaner-alist
   `(;; Minor modes
+    (helm-mode . "")
     (auto-complete-mode . " α")
     (yas/minor-mode . " υ")
     (paredit-mode . " ()")

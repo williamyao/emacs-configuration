@@ -1,23 +1,5 @@
 ;;;; Configuration for various modes.
 
-;;;; Updated 2015-08-29
-
-;;; IDO
-(ido-mode 1)
-(ido-everywhere 1)
-(flx-ido-mode 1)
-;; disable ido faces to see flx highlights.
-(setq ido-enable-flex-matching t)
-(setq ido-use-faces nil)
-(setq ido-create-new-buffer 'always)
-(setq ido-file-extensions-order
-      '(".lisp" ".md" ".asd"))
-(defadvice ido-find-file (after find-file-sudo activate)
-  "Find file as root if necessary."
-  (unless (and buffer-file-name
-               (file-writable-p buffer-file-name))
-    (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
-
 ;;; Projectile
 (define-key projectile-mode-map (kbd "C-x M-f") 'projectile-find-file)
 (define-key projectile-mode-map (kbd "C-x M-b") 'projectile-switch-to-buffer)
@@ -250,3 +232,13 @@ another one if eshell is not running."
 
 ;;; HL Line
 (global-hl-line-mode 1)
+
+;;; Helm
+(setq-default helm-split-window-in-side-p t)
+
+(define-globalized-minor-mode global-helm-mode helm-mode
+  (lambda ()
+    (helm-mode 1)
+    (helm-autoresize-mode 1)))
+
+(global-helm-mode 1)

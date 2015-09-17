@@ -52,7 +52,6 @@
 (require 'rainbow-mode)
 (require 'sly)
 (require 'sly-company)
-(require 'smex)
 (require 'vlf)
 (require 'writeroom-mode)
 
