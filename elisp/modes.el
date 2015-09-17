@@ -1,5 +1,8 @@
 ;;;; Configuration for various modes.
 
+;;; Ivy
+(ivy-mode 1)
+
 ;;; Projectile
 (projectile-global-mode 1)
 (setq projectile-completion-system 'ivy)

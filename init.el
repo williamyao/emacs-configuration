@@ -6,12 +6,6 @@
 
 ;;; Paths setup.
 
-;; (defvar user-home
-;;   (cl-case system-type
-;;     ((cygwin) "/home/william/")
-;;     ((linux gnu/linux) "/home/william/")
-;;     ((darwin) "/Users/william/")))
-
 (defvar user-home "~/")
 
 (defun home-path (path) (concat user-home path))
