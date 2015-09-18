@@ -22,7 +22,7 @@ For example, C-like languages might want to display the function name as
 
 (defpowerline powerline-buffer-status 
   (cond
-   ((buffer-modified-p) "Modified")
+   ((and buffer-file-name (buffer-modified-p)) "Modified")
    (buffer-read-only "Read-Only")
    (t "")))
 
@@ -63,7 +63,8 @@ For example, C-like languages might want to display the function name as
                         (when (fboundp 'projectile-project-name)
                           (powerline-projectile face1 'l))
                         (powerline-raw " " face1)
-                        (funcall (powerline-get-separator 'left) face1 face2)))
+                        (funcall (powerline-get-separator 'left) face1 face2)
+                        (powerline-buffer-status face2 'l)))
              (rhs (list (funcall (powerline-get-separator 'right) face2 face1)
                         (powerline-raw " " face1)
                         (powerline-major-mode face1 'r)
