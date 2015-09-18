@@ -1,11 +1,28 @@
 ;;;; Configuration for various modes.
 
-;;; Ivy
-(ivy-mode 1)
+;;; Helm
+(defun helm-hide-minibuffer-maybe ()
+  (when (with-helm-buffer helm-echo-input-in-header-line)
+    (let ((ov (make-overlay (point-min) (point-max) nil nil t)))
+      (overlay-put ov 'window (selected-window))
+      (overlay-put ov 'face (let ((bg-color (face-background 'default nil)))
+                              `(:background ,bg-color :foreground ,bg-color)))
+      (setq-local cursor-type nil))))
+
+(add-hook 'helm-minibuffer-set-up-hook 'helm-hide-minibuffer-maybe)
+
+(defun helm-hide-modeline (source &optional force)
+  (face-remap-add-relative 'mode-line 'mode-line-inactive)
+  (setq mode-line-format "")
+  (force-mode-line-update))
+
+(advice-add 'helm-display-mode-line :override 'helm-hide-modeline)
 
 ;;; Projectile
 (projectile-global-mode 1)
-(setq projectile-completion-system 'ivy)
+(setq projectile-completion-system 'helm)
+
+(define-key projectile-mode-map (kbd "M-p") 'helm-projectile)
     
 ;;; ERC
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
@@ -225,10 +242,6 @@ another one if eshell is not running."
 
 ;;; HL Line
 (global-hl-line-mode 1)
-
-;;; Helm
-(setq-default helm-split-window-in-side-p t)
-(setq-default helm-autoresize-max-height 30)
 
 ;;; Auto Complete
 (setq-default ac-auto-start nil)

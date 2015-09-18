@@ -40,21 +40,22 @@
 (require 'drag-stuff)
 (require 'expand-region)
 (require 'fill-column-indicator)
+(require 'flx-isearch)
 (require 'magit)
+(require 'markdown-mode)
 (require 'page-break-lines)
 (require 'paredit)
 (require 'paren-face)
+(require 'powerline)
 (require 'projectile)
 (require 'rainbow-mode)
 (require 'sly)
-(require 'swiper)
 (require 'vlf)
 (require 'writeroom-mode)
 
 ;;; Third-party libraries.
 
 ;; (require 'main-line)
-(require 'main-line)
 (require 'ac-company)
 (when (display-graphic-p)
   (require 'clean-mode-line))
@@ -66,11 +67,14 @@
 (load-library "timestamps")
 (load-library "window-manipulation")
 (load-library "writing")
+(load-library "custom-powerline")
 
 (load-library "keybinds")
 (load-library "modes")
  
 (load-library "customize") ; I keep customizes in a separate file.
+
+(powerline-william-theme)
 
 (when (fboundp 'toggle-frame-fullscreen)
   (toggle-frame-fullscreen))

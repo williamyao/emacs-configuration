@@ -25,10 +25,8 @@
 
 (global-set-key (kbd "C-c C-d M-h") 'dash-at-point)
 
-(global-set-key (kbd "C-s") 'swiper)
-(global-set-key (kbd "C-r") 'swiper)
-(global-set-key (kbd "C-M-s") 'swiper)
-(global-set-key (kbd "C-M-r") 'swiper)
+(global-set-key (kbd "C-M-s") 'flx-isearch-forward)
+(global-set-key (kbd "C-M-r") 'flx-isearch-backward-)
 
 (global-unset-key (kbd "RET"))
 (global-unset-key (kbd "C-x m"))
