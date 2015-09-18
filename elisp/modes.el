@@ -22,7 +22,7 @@
 (projectile-global-mode 1)
 (setq projectile-completion-system 'helm)
 
-(define-key projectile-mode-map (kbd "M-p") 'helm-projectile)
+(define-key projectile-mode-map (kbd "M-p") 'projectile-commander)
     
 ;;; ERC
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
