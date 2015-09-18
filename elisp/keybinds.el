@@ -26,7 +26,7 @@
 (global-set-key (kbd "C-c C-d M-h") 'dash-at-point)
 
 (global-set-key (kbd "C-M-s") 'flx-isearch-forward)
-(global-set-key (kbd "C-M-r") 'flx-isearch-backward-)
+(global-set-key (kbd "C-M-r") 'flx-isearch-backward)
 
 (global-unset-key (kbd "RET"))
 (global-unset-key (kbd "C-x m"))

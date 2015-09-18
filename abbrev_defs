@@ -162,7 +162,24 @@
 
 (define-abbrev-table 'sly-inspector-mode-abbrev-table '())
 
-(define-abbrev-table 'sly-mrepl-mode-abbrev-table '())
+(define-abbrev-table 'sly-mrepl-mode-abbrev-table
+  '(
+    ("dfc" "define-constant" nil 1)
+    ("dfg" "defgeneric" nil 5)
+    ("dfm" "defmethod" nil 9)
+    ("dfmc" "defmacro" nil 0)
+    ("dfn" "defun" nil 31)
+    ("dfp" "defparameter" nil 1)
+    ("dfr" "record:define" nil 1)
+    ("dfv" "defvar" nil 1)
+    ("dsb" "destructuring-bind" nil 0)
+    ("fc" "funcall" nil 5)
+    ("fmt" "format" nil 2)
+    ("fmtn" "format nil" nil 16)
+    ("fn" "lambda" nil 1)
+    ("mvb" "multiple-value-bind" nil 1)
+    ("mvl" "multiple-value-list" nil 0)
+    ))
 
 (define-abbrev-table 'sly-thread-control-mode-abbrev-table '())
 

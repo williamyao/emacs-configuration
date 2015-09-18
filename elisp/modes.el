@@ -87,7 +87,6 @@ in `text-mode'."
   (abbrev-mode 1)
   (paren-face-mode 1)
   (hs-minor-mode 1)
-  (projectile-mode 1)
   (fci-mode 1)
   (auto-complete-mode 1)
 
@@ -111,6 +110,18 @@ in `text-mode'."
 	  (lambda ()
 	    (sly-mode 1)
 	    (lisp-mode-customization)))
+
+(with-eval-after-load 'sly-mrepl
+  (add-hook 'sly-mrepl-hook
+            (lambda ()
+              (paredit-mode 1)
+              (abbrev-mode 1)
+              (paren-face-mode 1)
+              (auto-complete-mode 1)
+
+              (setup-tab-auto-complete)))
+
+ (define-key sly-mrepl-mode-map (kbd "C-i") 'indent-for-tab-command))
 
 ;;; Show Paren
 (show-paren-mode 1)
@@ -175,7 +186,6 @@ in `text-mode'."
 (defun algol-like-customization ()
   (fci-mode 1)
   (hs-minor-mode 1)
-  (projectile-mode 1)
   (page-break-lines-mode 1)
   (abbrev-mode 1)
   (auto-complete-mode 1)
@@ -246,9 +256,6 @@ another one if eshell is not running."
             :around 'maybe-dired-find-file-other-window)
 
 (diredp-toggle-find-file-reuse-dir 1)
-
-;;; Makefile
-(add-hook 'makefile-mode-hook (lambda () (projectile-mode 1)))
 
 ;;; HL Line
 (global-hl-line-mode 1)
