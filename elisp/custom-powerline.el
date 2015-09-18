@@ -22,7 +22,7 @@ For example, C-like languages might want to display the function name as
 
 (defpowerline powerline-buffer-status 
   (cond
-   ((and buffer-file-name (buffer-modified-p)) "Modified")
+   ((and buffer-file-name (buffer-modified-p)) "-MODIFIED-")
    (buffer-read-only "Read-Only")
    (t "")))
 
