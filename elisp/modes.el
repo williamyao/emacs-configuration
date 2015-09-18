@@ -122,6 +122,15 @@ in `text-mode'."
 	      (setq eshell-path-env (concat "/usr/local/bin:" eshell-path-env))
 	      (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH"))))))
 
+(defun scroll-to-end-eshell (count &optional all-frames)
+  "Scroll Eshell buffer to the bottom when entering it."
+  (when (and (boundp 'eshell-buffer-name)
+             (string-equal (buffer-name (current-buffer))
+                           eshell-buffer-name))
+    (end-of-buffer)))
+
+(advice-add 'other-window :after 'scroll-to-end-eshell)
+
 ;;; Rainbow
 (define-globalized-minor-mode global-rainbow-mode rainbow-mode
   (lambda ()
