@@ -13,8 +13,6 @@
       (remq 'process-kill-buffer-query-function
             kill-buffer-query-functions))
 
-(put 'narrow-to-page 'disabled nil)
-
 (setq-default sentence-end "[\\.;:!?] ")
 
 (setq-default indent-tabs-mode nil
