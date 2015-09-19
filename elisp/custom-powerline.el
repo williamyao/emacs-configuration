@@ -14,11 +14,22 @@ For example, C-like languages might want to display the function name as
 'function()', whereas Lisp-like languages might want it to display like
 '(function)'.")
 
+(defcustom powerline-buffer-name-limit 35
+  "Limit to the length of the buffer name, or NIL
+if no limit. Must be greater than 3.")
+
 (defun powerline-lisp-setup-which-function ()
   (setq powerline-which-function-format "(%s)"))
 
 (add-hook 'lisp-mode-hook 'powerline-lisp-setup-which-function)
 (add-hook 'emacs-lisp-mode-hook 'powerline-lisp-setup-which-function)
+
+(defpowerline powerline-maybe-shortened-buffer-name
+  (if (and powerline-buffer-name-limit
+           (> (length (buffer-name)) powerline-buffer-name-limit))
+      (concat (substring (buffer-name) 0 (- powerline-buffer-name-limit 1))
+              "…")
+    (buffer-name)))
 
 (defpowerline powerline-buffer-status 
   (cond
@@ -55,7 +66,7 @@ For example, C-like languages might want to display the function name as
              (lhs (list (powerline-raw "%e" nil 'l)
                         (when powerline-display-buffer-size
                           (powerline-buffer-size nil 'l))
-                        (powerline-raw "%b" nil 'l)
+                        (powerline-maybe-shortened-buffer-name nil 'l)
                         (powerline-raw " " nil)
                         (funcall (powerline-get-separator 'left) mode-face face1)
                         (when (and (boundp which-function-mode) which-function-mode)
