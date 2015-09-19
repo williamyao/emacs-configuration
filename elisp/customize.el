@@ -9,6 +9,7 @@
  '(helm-display-header-line nil)
  '(helm-echo-input-in-header-line t)
  '(helm-mode t)
+ '(helm-move-to-line-cycle-in-source t)
  '(helm-split-window-in-side-p t)
  '(powerline-display-buffer-size nil)
  '(writeroom-width 0.4))

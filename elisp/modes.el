@@ -18,11 +18,16 @@
 
 (advice-add 'helm-display-mode-line :override 'helm-hide-modeline)
 
+(helm-mode 1)
+
+(define-key helm-map (kbd "M-n") 'helm-next-source)
+(define-key helm-map (kbd "M-p") 'helm-previous-source)
+
 ;;; Projectile
 (projectile-global-mode 1)
 (setq projectile-completion-system 'helm)
 
-(define-key projectile-mode-map (kbd "M-p") 'projectile-commander)
+(define-key projectile-mode-map (kbd "M-p") 'helm-projectile)
     
 ;;; ERC
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))

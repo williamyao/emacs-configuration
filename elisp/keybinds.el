@@ -28,6 +28,8 @@
 (global-set-key (kbd "C-M-s") 'flx-isearch-forward)
 (global-set-key (kbd "C-M-r") 'flx-isearch-backward)
 
+(global-set-key (kbd "C-x b") 'helm-mini)
+
 (global-unset-key (kbd "RET"))
 (global-unset-key (kbd "C-x m"))
 (global-unset-key (kbd "C-x C-b"))
