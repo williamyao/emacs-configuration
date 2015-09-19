@@ -18,6 +18,15 @@ For example, C-like languages might want to display the function name as
   "Limit to the length of the buffer name, or NIL
 if no limit. Must be greater than 3.")
 
+(defcustom powerline-use-absolute-line-number t
+  "Whether to display relative or absolute line number in
+buffer narrowing.")
+
+(defcustom powerline-absolute-line-number-format "%l"
+  "Format string used when getting absolute line number.
+Used when in buffer narrowing mode, when `powerline-use-absolute-line-number'
+is non-NIL.")
+
 (defun powerline-lisp-setup-which-function ()
   (setq powerline-which-function-format "(%s)"))
 
@@ -49,6 +58,19 @@ if no limit. Must be greater than 3.")
         (format "[project %s]" project-name)
       "")))
 
+(defpowerline powerline-maybe-absolute-line-number
+  (if (and powerline-use-absolute-line-number (buffer-narrowed-p))
+      (save-restriction
+        (widen)
+        (format-mode-line powerline-absolute-line-number-format))
+    "%l"))
+
+(defpowerline powerline-narrow
+  (if (buffer-narrowed-p)
+      "Narrowed"
+    ""))
+
+
 ;;;###autoload
 (defun powerline-william-theme ()
   "My own custom powerline theme."
@@ -76,13 +98,16 @@ if no limit. Must be greater than 3.")
                         (powerline-raw " " face1)
                         (funcall (powerline-get-separator 'left) face1 face2)
                         (powerline-buffer-status face2 'l)))
-             (rhs (list (funcall (powerline-get-separator 'right) face2 face1)
+             (rhs (list (powerline-narrow face2 'r)
+                        (funcall (powerline-get-separator 'right) face2 face1)
                         (powerline-raw " " face1)
                         (powerline-major-mode face1 'r)
                         (powerline-minor-modes face1 'r)
                         (funcall (powerline-get-separator 'right) face1 mode-face)
                         (powerline-raw " " nil)
-                        (powerline-raw "Line %l, Col %c" nil 'r)
+                        (powerline-raw "Line" nil 'r)
+                        (powerline-maybe-absolute-line-number nil)
+                        (powerline-raw ", Col %c" nil 'r)
                         (powerline-raw "-" nil 'r)
                         (powerline-raw "%p" nil 'r))))
         (concat (powerline-render lhs)
