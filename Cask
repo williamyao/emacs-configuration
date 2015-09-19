@@ -12,6 +12,8 @@
 (depends-on "flx-ido")
 (depends-on "flx-isearch")
 (depends-on "helm")
+(depends-on "helm-core")
+(depends-on "helm-projectile")
 (depends-on "magit")
 (depends-on "magit-popup")
 (depends-on "markdown-mode")
