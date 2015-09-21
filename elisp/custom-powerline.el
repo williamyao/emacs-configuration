@@ -1,3 +1,8 @@
+;;;; My own personal powerline theme. Rough, but it gets
+;;;; the job done in a pleasing manner.
+
+(require 'powerline)
+
 (defun powerline-get-separator (direction)
   "Return the symbol of the current separator for DIRECTION.
 DIRECTION should be either RIGHT or LEFT; a RIGHT-separator goes
