@@ -54,8 +54,6 @@
 (require 'writeroom-mode)
 
 ;;; Third-party libraries.
-
-;; (require 'main-line)
 (require 'ac-company)
 (when (display-graphic-p)
   (require 'clean-mode-line))

@@ -11,6 +11,7 @@
  '(helm-mode t)
  '(helm-move-to-line-cycle-in-source t)
  '(helm-split-window-in-side-p t)
+ '(overflow-newline-into-fringe t)
  '(powerline-display-buffer-size nil)
  '(writeroom-width 0.4))
 
