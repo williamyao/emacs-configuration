@@ -113,3 +113,5 @@ is non-NIL.")
         (concat (powerline-render lhs)
                 (powerline-fill face2 (powerline-width rhs))
                 (powerline-render rhs)))))))
+
+(provide 'powerline-william-theme)
