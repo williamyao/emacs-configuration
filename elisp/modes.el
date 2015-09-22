@@ -192,6 +192,20 @@ in `text-mode'."
 (add-hook 'c-mode-hook 'algol-like-customization)
 (add-hook 'c-mode-hook (lambda () (flymake-mode 1)))
 
+(defvar make-clean-modes '(c-mode)
+  "List of modes in which to run 'make-clean' in before
+`magit-status'.")
+
+(defun maybe-make-clean (&rest args)
+  (when (or (apply 'derived-mode-p make-clean-modes)
+            (some (lambda (symbol)
+                    (and (boundp symbol)
+                         (symbol-value symbol)))
+                  make-clean-modes))
+    (shell-command "make clean")))
+
+(advice-add 'magit-status :before 'maybe-make-clean)
+
 ;;; Dired
 (setq-default dired-recursive-copies 'always)
 (setq-default dired-recursive-deletes 'always)

@@ -60,6 +60,7 @@
 
 ;;; Personal libraries.
 
+(load-library "auto-scroll-to-end")
 (load-library "osx-opening")
 (load-library "sexp-manipulation")
 (load-library "timestamps")

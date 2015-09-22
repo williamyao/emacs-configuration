@@ -26,7 +26,8 @@
  '(powerline-active1 ((t (:background "#b9c5cd" :foreground "#4c4c4c"))))
  '(powerline-active2 ((t (:background "#e1e1e1" :foreground "#4c4c4c"))))
  '(powerline-inactive1 ((t (:background "#d9d9d9" :foreground "#5f5f5f"))))
- '(powerline-inactive2 ((t (:background "#efefef" :foreground "#5f5f5f")))))
+ '(powerline-inactive2 ((t (:background "#efefef" :foreground "#5f5f5f"))))
+ '(parenthesis ((t (:foreground "gray60")))))
 
 (put 'narrow-to-region 'disabled nil)
 (put 'narrow-to-page 'disabled nil)
