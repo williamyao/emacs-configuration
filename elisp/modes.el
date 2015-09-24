@@ -192,7 +192,7 @@ in `text-mode'."
 (add-hook 'c-mode-hook 'algol-like-customization)
 (add-hook 'c-mode-hook (lambda () (flymake-mode 1)))
 
-(defvar make-clean-modes '(c-mode)
+(defvar make-clean-modes '(c-mode c++-mode)
   "List of modes in which to run 'make-clean' in before
 `magit-status'.")
 
