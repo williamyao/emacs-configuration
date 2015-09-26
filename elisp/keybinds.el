@@ -3,13 +3,8 @@
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
 
-(global-set-key (kbd "C-x C-m") 'execute-extended-command)
-
 (global-set-key (kbd "C-M-,") 'beginning-of-buffer)
 (global-set-key (kbd "C-M-.") 'end-of-buffer)
-
-(global-set-key (kbd "C-w") 'backward-kill-word)
-(global-set-key (kbd "C-x C-k") 'kill-region)
 
 (global-set-key (kbd "C-x j") 'delete-indentation)
 
@@ -37,5 +32,10 @@
 (global-unset-key (kbd "C-x C-b"))
 (global-unset-key (kbd "C-z"))
 (global-unset-key (kbd "C-x C-z"))
+
+(global-unset-key (kbd "C-p"))
+(global-unset-key (kbd "C-n"))
+(global-unset-key (kbd "C-b"))
+(global-unset-key (kbd "C-f"))
 
 (defalias 'qrr 'query-replace-regexp)
