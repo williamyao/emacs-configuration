@@ -2,6 +2,7 @@
 (source melpa)
 
 (depends-on "ac-sly")
+(depends-on "auctex")
 (depends-on "auto-complete")
 (depends-on "company")
 (depends-on "dash-at-point")

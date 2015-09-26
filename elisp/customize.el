@@ -13,7 +13,12 @@
  '(helm-split-window-in-side-p t)
  '(overflow-newline-into-fringe t)
  '(powerline-display-buffer-size nil)
- '(writeroom-width 0.4))
+ '(writeroom-width 0.4)
+ '(preview-gs-options
+   (quote
+    ("-q" "-dNOPAUSE" "-DNOPLATFONTS" "-dPrinted"
+     "-dTextAlphaBits=4" "-dGraphicsAlphaBits=4")))
+ '(preview-gs-command "/usr/local/bin/gs"))
 
 (custom-set-faces
  '(ac-completion-face ((t (:foreground "steelblue" :underline nil :weight bold))))

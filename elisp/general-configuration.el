@@ -2,6 +2,9 @@
 
 (require 'cl)
 
+(setenv "PATH" (concat "/Library/TeX/texbin:" (getenv "PATH")))
+(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+
 (setq ring-bell-function (lambda ()))
 (setq show-help-function nil)
 

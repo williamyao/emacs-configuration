@@ -131,13 +131,6 @@ in `text-mode'."
 ;;; Show Paren
 (show-paren-mode 1)
 
-;;; Eshell
-(add-hook 'eshell-mode-hook 
-	  (lambda ()
-	    (when (member system-type '(cygwin linux gnu/linux darwin))
-	      (setq eshell-path-env (concat "/usr/local/bin:" eshell-path-env))
-	      (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH"))))))
-
 ;;; Rainbow
 (define-globalized-minor-mode global-rainbow-mode rainbow-mode
   (lambda ()
