@@ -15,5 +15,9 @@ automatically scrolls to the bottom in defined modes."
 
 (advice-add 'other-window :after 'maybe-scroll-to-bottom)
 (advice-add 'switch-to-buffer :after 'maybe-scroll-to-bottom)
+(advice-add 'windmove-right :after 'maybe-scroll-to-bottom)
+(advice-add 'windmove-left :after 'maybe-scroll-to-bottom)
+(advice-add 'windmove-up :after 'maybe-scroll-to-bottom)
+(advice-add 'windmove-down :after 'maybe-scroll-to-bottom)
 
 (provide 'auto-scroll-to-end)

@@ -274,3 +274,6 @@ another one if eshell is not running."
 
 (defun setup-tab-auto-complete ()
   (add-to-list 'completion-at-point-functions 'tab/auto-complete))
+
+;;; Hi Lock
+(global-hi-lock-mode 1)
