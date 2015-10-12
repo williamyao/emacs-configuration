@@ -4,6 +4,7 @@
 
 (setenv "PATH" (concat "/Library/TeX/texbin:" (getenv "PATH")))
 (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+(setenv "PYTHONPATH" "~/Library/Python/2.7/lib/python/site-packages")
 
 (setq ring-bell-function (lambda ()))
 (setq show-help-function nil)

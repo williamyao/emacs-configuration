@@ -280,3 +280,10 @@ another one if eshell is not running."
 
 ;;; Subword
 (global-subword-mode 1)
+
+;;; Python
+(add-hook 'python-mode-hook
+          (lambda ()
+            (elpy-mode 1)))
+
+(setq elpy-rpc-python-command "python3")
