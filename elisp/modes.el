@@ -184,6 +184,7 @@ in `text-mode'."
 
 (add-hook 'c-mode-hook 'algol-like-customization)
 (add-hook 'c-mode-hook (lambda () (flymake-mode 1)))
+(add-hook 'c-mode-hook 'yas-minor-mode-on)
 
 (defvar make-clean-modes '(c-mode c++-mode)
   "List of modes in which to run 'make-clean' in before
