@@ -288,7 +288,11 @@ another one if eshell is not running."
 
 (setq elpy-rpc-python-command "python3")
 
-;;; Latex
-(add-hook 'latex-mode-hook
+;;; TeX
+(add-hook 'tex-mode-hook
           (lambda ()
-            (yas-minor-mode 1)))
+            (yas-minor-mode-on)))
+
+(add-hook 'LaTeX-mode-hook
+          (lambda ()
+            (yas-minor-mode-on)))
