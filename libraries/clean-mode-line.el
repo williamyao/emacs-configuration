@@ -14,6 +14,7 @@
     (rainbow-mode . "")
     (company-mode . " cmpl")
     (page-break-lines-mode . "")
+    (subword-mode . "")
     ;; Major modes
     (lisp-interaction-mode . "λ")
     (c-mode . "C")

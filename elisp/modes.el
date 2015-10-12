@@ -277,3 +277,6 @@ another one if eshell is not running."
 
 ;;; Hi Lock
 (global-hi-lock-mode 1)
+
+;;; Subword
+(global-subword-mode 1)
