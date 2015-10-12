@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: \begin{}[]
+# key: beginp
+# --
+\begin{${1:environment}}[${2:arguments}]
+$0
+\end{$1}
+  
