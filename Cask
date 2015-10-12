@@ -31,3 +31,4 @@
 (depends-on "swiper")
 (depends-on "vlf")
 (depends-on "writeroom-mode")
+(depends-on "yasnippet")

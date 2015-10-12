@@ -53,6 +53,7 @@
 (require 'sly)
 (require 'vlf)
 (require 'writeroom-mode)
+(require 'yasnippet)
 
 ;;; Third-party libraries.
 (require 'ac-company)
