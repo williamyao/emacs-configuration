@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: fc
+# name: (funcall ...)
+# --
+(funcall $1)

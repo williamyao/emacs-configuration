@@ -1,0 +1,6 @@
+# -*- mode:snippet -*-
+# key: defm
+# name: (defmethod ...)
+# --
+(defmethod ${1:function-name) $2(${3:args})
+  $0)

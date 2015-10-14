@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# key: defr
+# name: (defrecord ...)
+# --
+(record:define ${1:record-name} ($2)
+  $0)

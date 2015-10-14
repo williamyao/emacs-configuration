@@ -4,6 +4,7 @@
 (depends-on "ac-sly")
 (depends-on "auctex")
 (depends-on "auto-complete")
+(depends-on "auto-yasnippet")
 (depends-on "company")
 (depends-on "dash-at-point")
 (depends-on "dired+")

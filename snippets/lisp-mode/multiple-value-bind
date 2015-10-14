@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# key: mul
+# name: (multiple-value-bind ...)
+# --
+(multiple-value-bind ($1) ${2:bind}
+$0)

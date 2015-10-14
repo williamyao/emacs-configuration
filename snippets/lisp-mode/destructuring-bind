@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# key: des
+# name: (destructuring-bind ...)
+# --
+(destructuring-bind ($1) ${2:bind}
+$0)

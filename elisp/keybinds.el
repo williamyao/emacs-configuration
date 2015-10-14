@@ -30,6 +30,8 @@
 
 (global-set-key (kbd "C-x b") 'helm-mini)
 
+(global-set-key (kbd "M-i") 'aya-expand)
+
 (global-unset-key (kbd "C-x m"))
 (global-unset-key (kbd "C-x C-b"))
 (global-unset-key (kbd "C-z"))

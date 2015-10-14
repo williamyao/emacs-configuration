@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: mode
+# name: mode
+# --
+/* -*- mode: c++ -*- */

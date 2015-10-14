@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# key: def
+# name: (defparameter ...)
+# --
+(defparameter *${1:parameter-name}* ${2:nil}
+  "${3:Documentation for ${1:$(upcase yas-text)}}")

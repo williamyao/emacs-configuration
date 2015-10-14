@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: f
+# name: (format ...)
+# --
+(format ${1:t} "$2" $0)

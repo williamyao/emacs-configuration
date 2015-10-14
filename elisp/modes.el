@@ -89,7 +89,7 @@ in `text-mode'."
 
 (defun lisp-mode-customization ()
   (paredit-mode 1)
-  (abbrev-mode 1)
+  (yas-minor-mode-on)
   (paren-face-mode 1)
   (hs-minor-mode 1)
   (fci-mode 1)
@@ -120,7 +120,7 @@ in `text-mode'."
   (add-hook 'sly-mrepl-hook
             (lambda ()
               (paredit-mode 1)
-              (abbrev-mode 1)
+              (yas-minor-mode-on)
               (paren-face-mode 1)
               (auto-complete-mode 1)
 
@@ -175,7 +175,7 @@ in `text-mode'."
   (fci-mode 1)
   (hs-minor-mode 1)
   (page-break-lines-mode 1)
-  (abbrev-mode 1)
+  (yas-minor-mode-on)
   (auto-complete-mode 1)
 
   (setup-tab-auto-complete)
@@ -184,7 +184,8 @@ in `text-mode'."
 
 (add-hook 'c-mode-hook 'algol-like-customization)
 (add-hook 'c-mode-hook (lambda () (flymake-mode 1)))
-(add-hook 'c-mode-hook 'yas-minor-mode-on)
+
+(add-hook 'c++-mode-hook 'algol-like-customization)
 
 (defvar make-clean-modes '(c-mode c++-mode)
   "List of modes in which to run 'make-clean' in before
@@ -285,7 +286,8 @@ another one if eshell is not running."
 ;;; Python
 (add-hook 'python-mode-hook
           (lambda ()
-            (elpy-mode 1)))
+            (elpy-mode 1)
+            (fci-mode 1)))
 
 (setq elpy-rpc-python-command "python3")
 
@@ -297,3 +299,9 @@ another one if eshell is not running."
 (add-hook 'LaTeX-mode-hook
           (lambda ()
             (yas-minor-mode-on)))
+
+;;; TRAMP
+(setq tramp-default-method "ssh")
+
+;;; YASnippet
+(yas-reload-all)
