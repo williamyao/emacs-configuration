@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# group: control structure
+# key: fore
+# name: for ... else
+# --
+for ${1:element} in ${2:sequence}:
+    $3
+else:
+    $4
+$0

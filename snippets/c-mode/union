@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# key: union
+# name: union
+# group: data structures
+# --
+typedef union ${1:union}
+{
+$0
+} $1_t;

@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# key: enum
+# name: enum
+# group: data structures
+# --
+typedef enum ${1:enum}
+{
+$0
+} $1_t;

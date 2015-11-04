@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# key: struct
+# name: struct ... { ... }
+# group: data structures
+# --
+typedef struct ${1:struct}
+{
+$0
+} $1_t;

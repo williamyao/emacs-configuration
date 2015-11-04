@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# key: f
+# name: function
+# --
+${1:ret_type} ${2:function_name}(${3:args})
+{
+$0
+}

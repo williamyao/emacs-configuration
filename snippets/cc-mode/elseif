@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# key: ei
+# name: else if
+# group: control structures
+# --
+else if(${1:condition}) {
+$2
+} $0

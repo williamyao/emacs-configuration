@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# key: e
+# name: else
+# group: control structures
+# --
+else {
+$1
+}
+$0
