@@ -13,6 +13,4 @@
 
 ;;;; Specific file types for text writing.
 
-(add-to-list 'auto-mode-alist '("\\.md\\'" . writing-mode))
-
 (provide 'writing)
