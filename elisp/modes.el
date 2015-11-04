@@ -305,3 +305,7 @@ another one if eshell is not running."
 
 ;;; YASnippet
 (yas-reload-all)
+
+;;; MMM
+(setq mmm-global-mode 'maybe)
+(setq mmm-submode-decoration-level 0)
