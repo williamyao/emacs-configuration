@@ -11,7 +11,9 @@
 
 (global-set-key (kbd "C-x j") 'delete-indentation)
 
-(global-set-key (kbd "C-x M-;") 'comment-or-uncomment-region)
+(global-set-key (kbd "C-;") 'comment-or-uncomment-region)
+
+(global-set-key (kbd "C-.") 'indent-relative)
 
 (global-set-key (kbd "C-x t") 'insert-todo)
 
