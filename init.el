@@ -42,8 +42,10 @@
 (require 'expand-region)
 (require 'fill-column-indicator)
 (require 'flx-isearch)
+(require 'haskell-mode)
 (require 'magit)
 (require 'markdown-mode)
+(require 'mmm-mode)
 (require 'page-break-lines)
 (require 'paredit)
 (require 'paren-face)
@@ -79,3 +81,6 @@
 
 (when (fboundp 'toggle-frame-fullscreen)
   (toggle-frame-fullscreen))
+
+
+(global-unset-key (kbd "<down>"))
