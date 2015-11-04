@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: flet
+# name: flet
+# --
+(flet ((${1:name} (${2:args})
+$0))
+)
