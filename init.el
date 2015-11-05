@@ -81,6 +81,3 @@
 
 (when (fboundp 'toggle-frame-fullscreen)
   (toggle-frame-fullscreen))
-
-
-(global-unset-key (kbd "<down>"))
