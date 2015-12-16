@@ -32,6 +32,7 @@
 (depends-on "sly")
 (depends-on "soft-morning-theme")
 (depends-on "swiper")
+(depends-on "visible-mark")
 (depends-on "vlf")
 (depends-on "writeroom-mode")
 (depends-on "yasnippet")
