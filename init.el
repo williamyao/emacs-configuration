@@ -54,18 +54,17 @@
 (require 'page-break-lines)
 (require 'paredit)
 (require 'paren-face)
-(require 'powerline)
 (require 'projectile)
 (require 'rainbow-mode)
 (require 'sly)
+(require 'visible-mark)
 (require 'vlf)
 (require 'writeroom-mode)
 (require 'yasnippet)
 
 ;;; Third-party libraries.
 (require 'ac-company)
-(when (display-graphic-p)
-  (require 'clean-mode-line))
+(require 'clean-mode-line)
 
 ;;; Personal libraries.
 
