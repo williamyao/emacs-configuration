@@ -30,6 +30,9 @@
 (global-set-key (kbd "C-M-s") 'flx-isearch-forward)
 (global-set-key (kbd "C-M-r") 'flx-isearch-backward)
 
+(global-set-key (kbd "M-,") 'back-button-local-backward)
+(global-set-key (kbd "M-.") 'back-button-local-forward)
+
 (global-set-key (kbd "C-x b") 'helm-mini)
 
 (global-set-key (kbd "M-i") 'aya-expand)

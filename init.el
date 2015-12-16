@@ -39,6 +39,7 @@
 
 (require 'auto-complete)
 (require 'ac-sly)
+(require 'back-button)
 (require 'company)
 (require 'dash-at-point)
 (require 'drag-stuff)
