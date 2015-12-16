@@ -116,6 +116,8 @@ in `text-mode'."
 	    (sly-mode 1)
 	    (lisp-mode-customization)))
 
+(add-hook 'clojure-mode-hook 'lisp-mode-customization)
+
 (with-eval-after-load 'sly-mrepl
   (add-hook 'sly-mrepl-hook
             (lambda ()
