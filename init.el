@@ -10,6 +10,10 @@
 
 (defun home-path (path) (concat user-home path))
 
+(defmacro when-graphical (&rest body)
+  `(when (display-graphic-p)
+     ,@body))
+
 (defvar emacs-home (home-path ".emacs.d/"))
 
 (cl-flet ((add-path (path)
@@ -70,14 +74,16 @@
 (load-library "timestamps")
 (load-library "window-manipulation")
 (load-library "writing")
-(load-library "custom-powerline")
 
 (load-library "keybinds")
 (load-library "modes")
  
 (load-library "customize") ; I keep customizes in a separate file.
 
-(powerline-william-theme)
+;;; Powerline stuff
+(when-graphical (require 'powerline))
+(when-graphical (load-library "custom-powerline"))
+(when-graphical (powerline-william-theme))
 
 (when (fboundp 'toggle-frame-fullscreen)
   (toggle-frame-fullscreen))
