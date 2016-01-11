@@ -48,6 +48,7 @@
 (require 'fill-column-indicator)
 (require 'flx-isearch)
 (require 'haskell-mode)
+(require 'highlight-indentation)
 (require 'magit)
 (require 'markdown-mode)
 (require 'mmm-mode)

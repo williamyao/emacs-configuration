@@ -94,6 +94,8 @@ in `text-mode'."
   (hs-minor-mode 1)
   (fci-mode 1)
   (auto-complete-mode 1)
+  (highlight-indentation-mode 1)
+  (highlight-indentation-set-offset 2)
 
   (setup-tab-auto-complete)
 
