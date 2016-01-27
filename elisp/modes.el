@@ -18,6 +18,8 @@
 
 (advice-add 'helm-display-mode-line :override 'helm-hide-modeline)
 
+(setq helm-ff-newfile-prompt-p nil)
+
 (helm-mode 1)
 
 (define-key helm-map (kbd "M-n") 'helm-next-source)
