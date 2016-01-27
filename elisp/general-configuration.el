@@ -21,6 +21,8 @@
 
 (setq-default sentence-end "[\\.;:!?] ")
 
+(setq-default read-quoted-char-radix 16)
+
 (setq-default indent-tabs-mode nil
               tab-width 4)
 
