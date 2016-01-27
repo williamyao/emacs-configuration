@@ -90,7 +90,7 @@ in `text-mode'."
 (setq inferior-lisp-program "/usr/local/bin/ccl")
 
 (defun lisp-mode-customization ()
-  (lispy-mode 1)
+  (paredit-mode 1)
   (yas-minor-mode-on)
   (paren-face-mode 1)
   (hs-minor-mode 1)
@@ -132,7 +132,7 @@ in `text-mode'."
 
               (setup-tab-auto-complete)))
 
- (define-key sly-mrepl-mode-map (kbd "C-i") 'indent-for-tab-command))
+  (define-key sly-mrepl-mode-map (kbd "C-i") 'indent-for-tab-command))
 
 ;;; Show Paren
 (show-paren-mode 1)

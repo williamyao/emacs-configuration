@@ -29,6 +29,7 @@
 (depends-on "magit-popup")
 (depends-on "markdown-mode")
 (depends-on "mmm-mode")
+(depends-on "multiple-cursors")
 (depends-on "page-break-lines")
 (depends-on "pallet")
 (depends-on "paredit")
