@@ -48,6 +48,7 @@
 (require 'flx-isearch)
 (require 'haskell-mode)
 (require 'highlight-indentation)
+(require 'lispy)
 (require 'magit)
 (require 'markdown-mode)
 (require 'mmm-mode)

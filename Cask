@@ -24,6 +24,7 @@
 (depends-on "helm-core")
 (depends-on "helm-projectile")
 (depends-on "highlight-indentation")
+(depends-on "lispy")
 (depends-on "magit")
 (depends-on "magit-popup")
 (depends-on "markdown-mode")
