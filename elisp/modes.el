@@ -134,6 +134,25 @@ in `text-mode'."
 
   (define-key sly-mrepl-mode-map (kbd "C-i") 'indent-for-tab-command))
 
+(defvar lispy-william-map (make-sparse-keymap))
+
+;;; Global bindings
+(define-key lispy-william-map (kbd "(") 'lispy-parens)
+(define-key lispy-william-map (kbd ")") 'lispy-right-nostring)
+(define-key lispy-william-map (kbd "\"") 'lispy-quotes)
+
+;;; Local bindings
+(define-key lispy-william-map (kbd "a") 'special-lispy-left)
+(define-key lispy-william-map (kbd "o") 'special-lispy-up)
+(define-key lispy-william-map (kbd "e") 'special-lispy-down)
+(define-key lispy-william-map (kbd "u") 'special-lispy-right)
+
+(define-minor-mode lispy-william-mode
+  "Wrapper minor mode to have sane keymapping."
+  :keymap lispy-william-map
+  :group 'lispy
+  :lighter " (L)")
+
 ;;; Show Paren
 (show-paren-mode 1)
 
