@@ -1,5 +1,5 @@
 (defvar mode-line-cleaner-alist
-  `(;; Minor modes
+  `( ;; Minor modes
     (ivy-mode . "")
     (helm-mode . "")
     (auto-complete-mode . " α")
@@ -17,6 +17,7 @@
     (page-break-lines-mode . "")
     (subword-mode . "")
     (highlight-indentation-mode . "")
+    (auto-revert-mode . "")
     ;; Major modes
     (lisp-interaction-mode . "λ")
     (c-mode . "C")
