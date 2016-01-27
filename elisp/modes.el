@@ -90,7 +90,7 @@ in `text-mode'."
 (setq inferior-lisp-program "/usr/local/bin/ccl")
 
 (defun lisp-mode-customization ()
-  (paredit-mode 1)
+  (lispy-william-mode 1)
   (yas-minor-mode-on)
   (paren-face-mode 1)
   (hs-minor-mode 1)
@@ -125,7 +125,7 @@ in `text-mode'."
 (with-eval-after-load 'sly-mrepl
   (add-hook 'sly-mrepl-hook
             (lambda ()
-              (paredit-mode 1)
+              (lispy-william-mode 1)
               (yas-minor-mode-on)
               (paren-face-mode 1)
               (auto-complete-mode 1)
