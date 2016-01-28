@@ -138,14 +138,51 @@ in `text-mode'."
 
 ;;; Global bindings
 (define-key lispy-william-map (kbd "(") 'lispy-parens)
-(define-key lispy-william-map (kbd ")") 'lispy-right-nostring)
-(define-key lispy-william-map (kbd "\"") 'lispy-quotes)
+(define-key lispy-william-map (kbd ")") 'lispy-forward)
+(define-key lispy-william-map (kbd "{") 'lispy-braces)
+(define-key lispy-william-map (kbd "}") 'lispy-forward)
+(define-key lispy-william-map (kbd "[") 'lispy-brackets)
+(define-key lispy-william-map (kbd "]") 'lispy-forward)
+(define-key lispy-william-map (kbd "\"") 'lispy-doublequote)
+(define-key lispy-william-map (kbd "DEL") 'lispy-delete-backward)
+(define-key lispy-william-map (kbd "M-DEL") 'lispy-backward-kill-word)
+(define-key lispy-william-map (kbd "C-e") 'lispy-move-end-of-line)
+(define-key lispy-william-map (kbd "C-d") 'lispy-delete)
+(define-key lispy-william-map (kbd "C-k") 'lispy-kill)
+(define-key lispy-william-map (kbd "M-k") 'lispy-kill-sentence)
+(define-key lispy-william-map (kbd "M-m") 'lispy-mark-symbol)
+(define-key lispy-william-map (kbd "C-,") 'lispy-kill-at-point)
+(define-key lispy-william-map (kbd "C-1") 'lispy-describe-inline)
+(define-key lispy-william-map (kbd "C-2") 'lispy-arglist-inline)
+(define-key lispy-william-map (kbd "C-3") 'lispy-right)
+
+(define-key lispy-william-map (kbd "C-7") 'lispy-cursor-down)
 
 ;;; Local bindings
 (define-key lispy-william-map (kbd "a") 'special-lispy-left)
 (define-key lispy-william-map (kbd "o") 'special-lispy-up)
 (define-key lispy-william-map (kbd "e") 'special-lispy-down)
 (define-key lispy-william-map (kbd "u") 'special-lispy-right)
+(define-key lispy-william-map (kbd "d") 'special-lispy-different)
+
+(define-key lispy-william-map (kbd "i") 'special-lispy-tab)
+(define-key lispy-william-map (kbd "r") 'special-lispy-eval)
+
+(define-key lispy-william-map (kbd "x") 'special-lispy-x)
+
+(define-key lispy-william-map (kbd "q") 'special-lispy-ace-paren)
+(define-key lispy-william-map (kbd "s") 'special-lispy-ace-symbol)
+
+(define-key lispy-william-map (kbd "1") 'special-digit-argument)
+(define-key lispy-william-map (kbd "2") 'special-digit-argument)
+(define-key lispy-william-map (kbd "3") 'special-digit-argument)
+(define-key lispy-william-map (kbd "4") 'special-digit-argument)
+(define-key lispy-william-map (kbd "5") 'special-digit-argument)
+(define-key lispy-william-map (kbd "6") 'special-digit-argument)
+(define-key lispy-william-map (kbd "7") 'special-digit-argument)
+(define-key lispy-william-map (kbd "8") 'special-digit-argument)
+(define-key lispy-william-map (kbd "9") 'special-digit-argument)
+(define-key lispy-william-map (kbd "0") 'special-digit-argument)
 
 (define-minor-mode lispy-william-mode
   "Wrapper minor mode to have sane keymapping."
