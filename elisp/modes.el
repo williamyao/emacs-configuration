@@ -155,8 +155,11 @@ in `text-mode'."
 (define-key lispy-william-map (kbd "C-1") 'lispy-describe-inline)
 (define-key lispy-william-map (kbd "C-2") 'lispy-arglist-inline)
 (define-key lispy-william-map (kbd "C-3") 'lispy-right)
+(define-key lispy-william-map (kbd "RET") 'lispy-newline-and-indent-plain)
 
 (define-key lispy-william-map (kbd "C-7") 'lispy-cursor-down)
+
+(define-key lispy-william-map (kbd "M-n") 'lispy-ace-paren)
 
 ;;; Local bindings
 (define-key lispy-william-map (kbd "a") 'special-lispy-left)
@@ -164,6 +167,7 @@ in `text-mode'."
 (define-key lispy-william-map (kbd "e") 'special-lispy-down)
 (define-key lispy-william-map (kbd "u") 'special-lispy-right)
 (define-key lispy-william-map (kbd "d") 'special-lispy-different)
+(define-key lispy-william-map (kbd "j") 'special-lispy-ace-char)
 
 (define-key lispy-william-map (kbd "i") 'special-lispy-tab)
 (define-key lispy-william-map (kbd "r") 'special-lispy-eval)
@@ -172,6 +176,41 @@ in `text-mode'."
 
 (define-key lispy-william-map (kbd "q") 'special-lispy-ace-paren)
 (define-key lispy-william-map (kbd "s") 'special-lispy-ace-symbol)
+
+(define-key lispy-william-map (kbd "n") 'special-lispy-undo)
+(define-key lispy-william-map (kbd "c") 'special-lispy-clone)
+(define-key lispy-william-map (kbd "m") 'special-lispy-mark-list)
+(define-key lispy-william-map (kbd "y") 'special-lispy-new-copy)
+(define-key lispy-william-map (kbd "h") 'special-lispy-raise)
+(define-key lispy-william-map (kbd "p") 'special-lispy-paste)
+
+(defun lispy-william-movel (arg)
+  (interactive "p")
+  (cond ((lispy-right-p) (lispy-barf arg))
+        ((lispy-left-p) (lispy-slurp arg))
+        (t (self-insert-command 1))))
+
+(defun lispy-william-mover (arg)
+  (interactive "p")
+  (cond ((lispy-right-p) (lispy-slurp arg))
+        ((lispy-left-p) (lispy-barf arg))
+        (t (self-insert-command 1))))
+
+(define-key lispy-william-map (kbd "<") 'lispy-william-movel)
+(define-key lispy-william-map (kbd ">") 'lispy-william-mover)
+
+(define-key lispy-william-map (kbd "l") 'special-lispy-view)
+
+(define-key lispy-william-map (kbd "C") 'special-lispy-convolute)
+(define-key lispy-william-map (kbd "M") 'special-lispy-alt-multiline)
+(define-key lispy-william-map (kbd "N") 'special-lispy-narrow)
+(define-key lispy-william-map (kbd "W") 'special-lispy-widen)
+(define-key lispy-william-map (kbd "S") 'special-lispy-splice)
+
+(define-key lispy-william-map (kbd "A") 'special-lispy-move-left)
+(define-key lispy-william-map (kbd "O") 'special-lispy-move-up)
+(define-key lispy-william-map (kbd "E") 'special-lispy-move-down)
+(define-key lispy-william-map (kbd "U") 'special-lispy-move-right)
 
 (define-key lispy-william-map (kbd "1") 'special-digit-argument)
 (define-key lispy-william-map (kbd "2") 'special-digit-argument)
@@ -245,7 +284,6 @@ in `text-mode'."
   (hs-hide-all))
 
 (add-hook 'c-mode-hook 'algol-like-customization)
-(add-hook 'c-mode-hook (lambda () (flymake-mode 1)))
 
 (add-hook 'c++-mode-hook 'algol-like-customization)
 
