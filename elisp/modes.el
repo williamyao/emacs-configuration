@@ -198,6 +198,8 @@ in `text-mode'."
 
 (define-key lispy-william-map (kbd "<") 'lispy-william-movel)
 (define-key lispy-william-map (kbd ">") 'lispy-william-mover)
+(define-key lispy-william-map (kbd ",") 'special-lispy-up-slurp)
+(define-key lispy-william-map (kbd ".") 'special-lispy-down-slurp)
 
 (define-key lispy-william-map (kbd "l") 'special-lispy-view)
 
