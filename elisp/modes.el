@@ -168,6 +168,16 @@ in `text-mode'."
 (lispy-define-key lispy-william-map (kbd "u") 'lispy-right)
 (lispy-define-key lispy-william-map (kbd "d") 'lispy-different)
 (lispy-define-key lispy-william-map (kbd "j") 'lispy-ace-char)
+(lispy-define-key lispy-william-map (kbd "f") 'lispy-flow)
+
+(defun lispy-william-space ()
+  "Insert a space. Move back if at left paren."
+  (interactive)
+  (insert " ")
+  (when (lispy-left-p)
+    (left-char 1)))
+
+(lispy-define-key lispy-william-map "SPC" 'lispy-william-space)
 
 (lispy-define-key lispy-william-map (kbd "i") 'lispy-tab)
 (lispy-define-key lispy-william-map (kbd "r") 'lispy-eval)
