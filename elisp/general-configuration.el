@@ -4,6 +4,7 @@
 
 (setenv "PATH" (concat "/Library/TeX/texbin:" (getenv "PATH")))
 (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
+(setenv "TEXINPUTS" (concat "/usr/local/Cellar/noweb/2.11b/tex/generic/noweb/:" (getenv "TEXINPUTS")))
 (add-to-list 'exec-path "/Library/TeX/texbin")
 (add-to-list 'exec-path "/usr/local/bin")
 (setenv "PYTHONPATH" "~/Library/Python/2.7/lib/python/site-packages")
