@@ -33,7 +33,9 @@
 (load-library "general-configuration") ; mode-agnostic configuration
 
 ;;; Color theme.
-(require 'soft-morning-theme)
+;; (require 'soft-morning-theme)
+(load-theme 'quasi-monochrome t)
+(set-frame-font (font-spec :name "Droid Sans Mono" :size 12))
 
 ;;; Cask libraries.
 
@@ -85,6 +87,3 @@
 (when-graphical (require 'powerline))
 (when-graphical (load-library "custom-powerline"))
 (when-graphical (powerline-william-theme))
-
-(when (fboundp 'toggle-frame-fullscreen)
-  (toggle-frame-fullscreen))

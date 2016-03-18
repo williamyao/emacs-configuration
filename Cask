@@ -36,6 +36,7 @@
 (depends-on "paren-face")
 (depends-on "powerline")
 (depends-on "projectile")
+(depends-on "quasi-monochrome-theme")
 (depends-on "rainbow-mode")
 (depends-on "sly")
 (depends-on "soft-morning-theme")
