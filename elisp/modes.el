@@ -1,5 +1,14 @@
 ;;;; Configuration for various modes.
 
+;;; General programming customization.
+(defun programming-customization ()
+  (yas-minor-mode-on)
+  (paren-face-mode 1)
+  (hs-minor-mode 1)
+  (fci-mode 1)
+  (auto-complete-mode 1)
+  (highlight-indentation-mode 1))
+
 ;;; Helm
 (defun helm-hide-minibuffer-maybe ()
   (when (with-helm-buffer helm-echo-input-in-header-line)

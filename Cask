@@ -39,6 +39,7 @@
 (depends-on "quasi-monochrome-theme")
 (depends-on "rainbow-mode")
 (depends-on "sly")
+(depends-on "sml-mode")
 (depends-on "soft-morning-theme")
 (depends-on "swiper")
 (depends-on "visible-mark")

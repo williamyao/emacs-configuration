@@ -19,6 +19,7 @@
 (cl-flet ((add-path (path)
             (add-to-list 'load-path (concat emacs-home path))))
   (add-path "elisp") ; personal code
+  (add-path "elisp/modes")
   (add-path "libraries") ; third party code
   (add-path "libraries/color-theme-6.6.0/")
   (add-path "libraries/emacs-mainline/"))
@@ -80,7 +81,13 @@
 
 (load-library "keybinds")
 (load-library "modes")
- 
+
+;;; TODO 2016-03-18 williamyaoh@gmail.com
+;;;  - Refactor my current mode-enabling stuff. Having
+;;;    to do it in init is kind of ugly. Maybe I can move the requires
+;;;    into the specific customizes?
+(load-library "sml-mode")
+
 (load-library "customize") ; I keep customizes in a separate file.
 
 ;;; Powerline stuff
