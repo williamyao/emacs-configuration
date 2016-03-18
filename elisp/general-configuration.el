@@ -2,13 +2,6 @@
 
 (require 'cl)
 
-(setenv "PATH" (concat "/Library/TeX/texbin:" (getenv "PATH")))
-(setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))
-(setenv "TEXINPUTS" (concat "/usr/local/Cellar/noweb/2.11b/tex/generic/noweb/:" (getenv "TEXINPUTS")))
-(add-to-list 'exec-path "/Library/TeX/texbin")
-(add-to-list 'exec-path "/usr/local/bin")
-(setenv "PYTHONPATH" "~/Library/Python/2.7/lib/python/site-packages")
-
 (setq ring-bell-function (lambda ()))
 (setq show-help-function nil)
 
@@ -31,9 +24,7 @@
 (if (fboundp 'tool-bar-mode)   (tool-bar-mode   -1))
 (if (fboundp 'menu-bar-mode)   (menu-bar-mode   -1))
 
-;; (advice-add 'make-frame :after
-;;             (lambda (&rest args)
-;;               (set-frame-font (font-spec :name "monofur" :size 14))))
+(set-frame-font (font-spec :name "Droid Sans Mono" :size 12))
 
 (when (eql system-type 'darwin)
   (setq ns-use-srgb-colorspace nil)) ; for powerline separators
