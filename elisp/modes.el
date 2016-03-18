@@ -23,7 +23,6 @@
 (helm-mode 1)
 
 (define-key helm-map (kbd "M-n") 'helm-next-source)
-(define-key helm-map (kbd "M-p") 'helm-previous-source)
 
 ;;; Projectile
 (projectile-global-mode 1)
