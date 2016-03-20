@@ -11,8 +11,18 @@
 ;;; First, we set all keys to `self-insert-command'.
 (define-key dyntu-global-map [t] 'self-insert-command)
 
+;;; Basic editing.
 (define-key dyntu-global-map (kbd "<backspace>") 'backward-delete-char)
 (define-key dyntu-global-map (kbd "RET") 'newline-and-indent)
 (define-key dyntu-global-map (kbd "C-j") 'newline)
+
+;;; Basic movement.
+(setf next-line-add-newlines nil)
+(setf line-move-visual t)
+
+(define-key dyntu-global-map (kbd "C-h") 'backward-char)
+(define-key dyntu-global-map (kbd "C-t") 'next-line)
+(define-key dyntu-global-map (kbd "C-n") 'previous-line)
+(define-key dyntu-global-map (kbd "C-s") 'forward-char)
 
 (use-global-map dyntu-global-map)
