@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# key: rt
-# name: regexTest
-# --
-void test${1:$(constant-to-camel yas-text)}() {
-    TS_ASSERT_EQUALS(matchRegex(${1:regexp), "$2"), $3);
-}

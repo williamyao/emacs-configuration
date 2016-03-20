@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# key: lbl
-# name: lbl
-# --
-(labels ((${1:name} (${2:args})
-$0))
-)

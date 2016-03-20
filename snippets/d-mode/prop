@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# key: prop
-# name: property
-# group: data structures
-# --
-@property public ${1:type} ${2:name}() { return this._$2; }
-@property public $1 $2($1 value) { return (this._$2 = value); }
-private $1 _$2;
-$0

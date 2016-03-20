@@ -1,7 +1,0 @@
-# -*- mode:snippet -*-
-# key: defn
-# name: (defun ...)
-# --
-(defun ${1:function-name} (${2:args})
-  "${3:Documentation for ${1:$(upcase yas-text)}}"
-  $0)

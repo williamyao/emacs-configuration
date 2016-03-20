@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# key: let
-# name: let
-# --
-(let (${1:binding})
-$0)
