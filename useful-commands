@@ -1,0 +1,11 @@
+Commands that I've found useful, but don't use often enough to
+remember.
+
+Name				Default binding
+-----------------------------------------------
+
+repeat-complex-command		C-x M-ESC
+repeat				C-x z
+shell-command			M-!
+async-shell-command		M-&
+shell-command-on-region		M-|
