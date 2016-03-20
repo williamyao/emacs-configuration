@@ -1,15 +1,2 @@
-*~
-\#*\#
-.DS_Store
-ido.last
-.cask
-eshell
-auto-save-list
-smex-items
-tramp
-projectile-bookmarks.eld
-ac-comphist.dat
-helm-adaptive-history
-recentf
-url
-projectile.cache
+*
+!Cask
