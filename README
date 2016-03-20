@@ -9,3 +9,7 @@ commands:
     cd ~/.emacs.d
     git checkout dyntu
     cask install
+
+--------------------------------------------------------------------------------
+
+[1] https://github.com/cask/cask
