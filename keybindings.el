@@ -18,6 +18,7 @@
 ;;; First, we set all printing keys to `self-insert-command'.
 (loop for b from 32 upto 126
       do (bind (byte-to-string b) 'self-insert-command))
+(bind "SPC" 'self-insert-command)
 
 ;;; Fundamental stuff.
 (bind "M-x" 'execute-extended-command)
@@ -27,6 +28,9 @@
 (bind "C-x b" 'switch-to-buffer)
 
 (bind "C-x C-c" 'save-buffers-kill-terminal)
+(bind "C-s" 'save-buffer)
+
+(bind "C-M-x" 'eval-defun)
 
 ;;; Editing.
 (bind "C-u" 'universal-argument)
@@ -53,12 +57,12 @@
 
 (bind "C-x j" 'delete-indentation)
 
-(bind "C-n" 'undo)
-
 (bind "C-x TAB" 'indent-rigidly)
 (bind "C-." 'indent-relative)
 
 (bind "C-;" 'comment-or-uncomment-region)
+
+(bind "C-y" 'yank)
 
 ;;; Movement.
 (setf next-line-add-newlines nil)
@@ -79,13 +83,13 @@
 (bind "C-x M-s" 'windmove-right)
 
 (bind "C-M-," 'beginning-of-buffer)
-(bind "C-M-." 'beginning-of-buffer)
+(bind "C-M-." 'end-of-buffer)
+
+(bind "C-v" 'scroll-up-command)
+(bind "M-v" 'scroll-down-command)
 
 (bind "C-a" 'move-beginning-of-line)
 (bind "C-e" 'move-end-of-line)
-
-(bind "C-s" 'isearch-forward)
-(bind "C-r" 'isearch-backward)
 
 (bind "C-l" 'recenter-top-bottom)
 

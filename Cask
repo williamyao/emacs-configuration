@@ -5,3 +5,7 @@
 
 (source melpa)
 (source gnu)
+
+(depends-on "smex")
+(depends-on "undo-tree")
+(depends-on "use-package")

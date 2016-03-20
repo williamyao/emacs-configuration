@@ -4,4 +4,6 @@
 !init.el
 !setup-cask.el
 !keybindings.el
+!packages.el
+!customize.el
 !useful-commands
