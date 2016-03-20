@@ -1,0 +1,11 @@
+A fresh configuration of Emacs, with the goal of being as portable and modular
+as possible.
+
+If you'd like to try this configuration, install Cask[1], a package manager for
+Emacs. Then delete your `~/.emacs.d/` directory (if it exists) and run these
+commands:
+
+    git clone https://www.github.com/williamyao/emacs-configuration.git ~/.emacs.d
+    cd ~/.emacs.d
+    git checkout dyntu
+    cask install
