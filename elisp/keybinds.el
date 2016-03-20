@@ -9,6 +9,8 @@
 (global-set-key (kbd "C-w") 'backward-kill-word)
 (global-set-key (kbd "C-x C-k") 'kill-region)
 
+(global-set-key (kbd "C-n") 'undo)
+
 (global-set-key (kbd "C-x j") 'delete-indentation)
 
 (global-set-key (kbd "C-;") 'comment-or-uncomment-region)
@@ -45,13 +47,10 @@
 (global-unset-key (kbd "C-x C-z"))
 
 (global-unset-key (kbd "C-p"))
-(global-unset-key (kbd "C-n"))
 (global-unset-key (kbd "C-b"))
 (global-unset-key (kbd "C-f"))
 
 (global-unset-key (kbd "C-x o"))
-
-(global-set-key (kbd "C-n") 'undo)
 
 (defalias 'qrr 'query-replace-regexp)
 
