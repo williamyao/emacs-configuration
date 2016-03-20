@@ -1,3 +1,5 @@
 *
 !Cask
 !README
+!init.el
+!setup-cask.el
