@@ -9,3 +9,4 @@ repeat				C-x z
 shell-command			M-!
 async-shell-command		M-&
 shell-command-on-region		M-|
+indent-relative			C-x TAB
