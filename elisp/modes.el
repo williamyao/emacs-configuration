@@ -6,8 +6,7 @@
   (paren-face-mode 1)
   (hs-minor-mode 1)
   (fci-mode 1)
-  (auto-complete-mode 1)
-  (highlight-indentation-mode 1))
+  (auto-complete-mode 1))
 
 ;;; Helm
 (defun helm-hide-minibuffer-maybe ()

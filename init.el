@@ -86,7 +86,7 @@
 ;;;  - Refactor my current mode-enabling stuff. Having
 ;;;    to do it in init is kind of ugly. Maybe I can move the requires
 ;;;    into the specific customizes?
-(load-library "sml-mode")
+(load-library "sml-mode-customize")
 
 (load-library "customize") ; I keep customizes in a separate file.
 
