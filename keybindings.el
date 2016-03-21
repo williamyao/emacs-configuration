@@ -25,6 +25,7 @@
 (bind "C-g" 'keyboard-quit)
 
 (bind "C-x C-f" 'find-file)
+
 (bind "C-x b" 'switch-to-buffer)
 
 (bind "C-x C-c" 'save-buffers-kill-terminal)
@@ -34,7 +35,16 @@
 
 (bind "C-x k" 'kill-buffer)
 
+(bind "M-!" 'async-shell-command)
+(bind "M-|" 'shell-command-on-region)
+
+(bind "M-:" 'eval-expression)
+
+(bind "C-q" 'quoted-insert)
+
 ;;; Editing.
+(bind "TAB" 'indent-for-tab-command)
+
 (bind "C-u" 'universal-argument)
 
 (bind "<backspace>" 'backward-delete-char)
@@ -56,6 +66,7 @@
 (bind "C-x C-k" 'kill-region)
 
 (bind "C-k" 'kill-line)
+(bind "C-M-k" 'kill-sexp)
 
 (bind "C-x j" 'delete-indentation)
 
