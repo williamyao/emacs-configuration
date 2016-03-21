@@ -6,6 +6,7 @@
 (source melpa)
 (source gnu)
 
+(depends-on "discover")
 (depends-on "magit")
 (depends-on "paredit")
 (depends-on "paren-face")

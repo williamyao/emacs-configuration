@@ -66,3 +66,5 @@
   :bind
   (:map dyntu-global-map
         ("C-x C-h" . magit-status)))
+
+(use-package discover)
