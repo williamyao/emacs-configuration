@@ -58,11 +58,14 @@
 
 (setq-default truncate-lines t)
 
-(define-globalized-minor-mode global-delete-selection-mode delete-selection-mode
+(define-globalized-minor-mode global-delete-selection-mode
+  delete-selection-mode
   (lambda ()
     (delete-selection-mode 1)))
 
 (global-delete-selection-mode 1)
+
+(show-paren-mode 1)
 
 ;;; Tabulation. Important enough for a tag.
 

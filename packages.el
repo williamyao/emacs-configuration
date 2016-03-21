@@ -1,4 +1,4 @@
-1;;;; Dyntu setup for various installed packages.
+;;;; Dyntu setup for various installed packages.
 
 (use-package ido
   :config
@@ -68,3 +68,37 @@
         ("C-x C-h" . magit-status)))
 
 (use-package discover)
+
+(use-package vlf)
+
+(use-package clojure-mode)
+
+(use-package cider)
+
+(use-package d-mode)
+
+(use-package page-break-lines
+  :config
+  (global-page-break-lines-mode))
+
+(use-package fill-column-indicator
+  :config
+  (setq-default fci-rule-column 80))
+
+(use-package hideshow
+  :bind
+  (:map dyntu-global-map
+        ("M-h" . hs-toggle-hiding)))
+
+(use-package paredit)
+
+(use-package sml-mode)
+
+(use-package vlf)
+
+(use-package sly)
+
+(use-package cc-mode
+  :config
+  (setq-default c-basic-offset 4)
+  (setq-default c-default-style "linux"))
