@@ -110,6 +110,7 @@
 (bind "C-M-e" 'end-of-defun)
 
 (bind "C-l" 'recenter-top-bottom)
+(bind "M-l" 'move-to-window-line-top-bottom)
 
 (bind "C-n" 'isearch-forward)
 (bind "C-t" 'isearch-backward)
@@ -118,5 +119,7 @@
 
 (bind "C-r" 'point-to-register)
 (bind "M-r" 'register-to-point)
+
+(bind "M-g M-g" 'goto-line)
 
 (use-global-map dyntu-global-map)

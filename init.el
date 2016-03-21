@@ -32,4 +32,6 @@
 
 (setq inhibit-startup-message t)
 (setq inhibit-startup-echo-message t)
+
+(global-subword-mode 1)
 ;;;; ---------------------------------------------------------------------------
