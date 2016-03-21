@@ -41,5 +41,8 @@
 
 (setq kill-buffer-query-functions
   (remq 'process-kill-buffer-query-function
-         kill-buffer-query-functions))
+	kill-buffer-query-functions))
+
+(tooltip-mode -1)
+(setq tooltip-use-echo-area t)
 ;;;; ---------------------------------------------------------------------------

@@ -125,4 +125,7 @@
 
 (bind "M-g M-g" 'goto-line)
 
+(setq set-mark-command-repeat-pop t)
+(bind "C-SPC" 'set-mark-command)
+
 (use-global-map dyntu-global-map)
