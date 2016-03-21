@@ -77,6 +77,11 @@
 (bind "C-M-s" 'forward-char)
 (bind "<right>" 'forward-char)
 
+(bind "M-h" 'backward-word)
+(bind "M-t" 'forward-sexp)
+(bind "M-n" 'backward-sexp)
+(bind "M-s" 'forward-word)
+
 (bind "C-x M-h" 'windmove-left)
 (bind "C-x M-t" 'windmove-down)
 (bind "C-x M-n" 'windmove-up)
@@ -85,12 +90,24 @@
 (bind "C-M-," 'beginning-of-buffer)
 (bind "C-M-." 'end-of-buffer)
 
+(bind "C-x o" 'other-window)
+(bind "C-x 0" 'delete-window)
+
 (bind "C-v" 'scroll-up-command)
 (bind "M-v" 'scroll-down-command)
 
 (bind "C-a" 'move-beginning-of-line)
 (bind "C-e" 'move-end-of-line)
 
+(bind "M-a" 'backward-sentence)
+(bind "M-e" 'forward-sentence)
+
+(bind "C-M-a" 'beginning-of-defun)
+(bind "C-M-e" 'end-of-defun)
+
 (bind "C-l" 'recenter-top-bottom)
+
+(bind "C-n" 'isearch-forward)
+(bind "C-t" 'isearch-backward)
 
 (use-global-map dyntu-global-map)
