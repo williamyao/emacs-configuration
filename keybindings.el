@@ -32,6 +32,7 @@
 (bind "C-s" 'save-buffer)
 
 (bind "C-M-x" 'eval-defun)
+(bind "M-:" 'eval-expression)
 
 (bind "C-x k" 'kill-buffer)
 
@@ -46,8 +47,6 @@
      replace-buffer
      replace-buffer)))
 (bind "C-!" 'shell-command-on-buffer)
-
-(bind "M-:" 'eval-expression)
 
 (bind "C-q" 'quoted-insert)
 
