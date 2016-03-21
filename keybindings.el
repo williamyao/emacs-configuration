@@ -26,6 +26,9 @@
 
 (bind "C-x C-f" 'find-file)
 
+(bind "C-x r" 'repeat)
+(bind "C-x C-M-r" 'repeat-complex-command)
+
 (bind "C-x b" 'switch-to-buffer)
 
 (bind "C-x C-c" 'save-buffers-kill-terminal)

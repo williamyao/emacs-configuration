@@ -45,4 +45,14 @@
 
 (tooltip-mode -1)
 (setq tooltip-use-echo-area t)
+
+(setq ring-bell-function (lambda ()))
+(setq show-help-function nil)
+
+(setq-default truncate-lines t)
+
+;;; Tabulation. Important enough for a tag.
+
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
 ;;;; ---------------------------------------------------------------------------
