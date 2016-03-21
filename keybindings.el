@@ -66,6 +66,8 @@
 
 (bind "C-y" 'yank)
 
+(bind "C-x C-o" 'delete-blank-lines)
+
 ;;; Movement.
 (setf next-line-add-newlines nil)
 (setf line-move-visual t)
@@ -111,5 +113,10 @@
 
 (bind "C-n" 'isearch-forward)
 (bind "C-t" 'isearch-backward)
+
+(bind "M-m" 'back-to-indentation)
+
+(bind "C-r" 'point-to-register)
+(bind "M-r" 'register-to-point)
 
 (use-global-map dyntu-global-map)
