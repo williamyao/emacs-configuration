@@ -6,13 +6,20 @@ Name				Default binding
 
 repeat-complex-command		C-x M-ESC
 repeat				C-x z
+
 shell-command			M-!
 async-shell-command		M-&
 shell-command-on-region		M-|
-indent-relative			C-x TAB
+
+indent-rigidly			C-x TAB
+
 info-apropos			
+
 sort-lines
 sort-fields
 sort-numeric-fields
 sort-regexp-fields
 reverse-region
+
+tabify
+untabify
