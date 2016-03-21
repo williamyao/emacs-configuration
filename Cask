@@ -11,6 +11,7 @@
 (depends-on "paren-face")
 (depends-on "powerline")
 (depends-on "quasi-monochrome-theme")
+(depends-on "rainbow-mode")
 (depends-on "smex")
 (depends-on "undo-tree")
 (depends-on "use-package")

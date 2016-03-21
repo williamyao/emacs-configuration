@@ -36,3 +36,28 @@
   :bind
   (:map dyntu-global-map
 	("C-x C-r" . ido-recentf-open)))
+
+(use-package powerline
+  :config
+  (load-library "custom-powerline")
+  (powerline-william-theme))
+
+(use-package paren-face-mode
+  :config
+  (global-paren-face-mode 1))
+
+(use-package rainbow-mode
+  :config
+  (define-globalized-minor-mode global-rainbow-mode rainbow-mode
+    (lambda ()
+      (rainbow-mode 1)))
+
+  (global-rainbow-mode 1))
+
+(use-package hl-line
+  :config
+  (global-hl-line-mode 1))
+
+(use-package 'tramp
+  :config
+  (setq tramp-default-method "ssh"))

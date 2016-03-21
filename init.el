@@ -1,5 +1,7 @@
 ;;;; Dyntu setup.
 
+(add-to-list 'load-path "~/.emacs.d/elisp")
+
 (load-library "~/.emacs.d/setup-cask.el")
 
 ;;;; - Keybindings -------------------------------------------------------------
@@ -55,6 +57,12 @@
 (setq show-help-function nil)
 
 (setq-default truncate-lines t)
+
+(define-globalized-minor-mode global-delete-selection-mode delete-selection-mode
+  (lambda ()
+    (delete-selection-mode 1)))
+
+(global-delete-selection-mode 1)
 
 ;;; Tabulation. Important enough for a tag.
 
