@@ -36,6 +36,16 @@
 (bind "C-x k" 'kill-buffer)
 
 (bind "M-!" 'async-shell-command)
+(defun shell-command-on-buffer (p)
+  (interactive "P")
+  (let ((replace-buffer (if p t nil)))
+    (shell-command-on-region
+     (point-min)
+     (point-max)
+     (read-string "Shell command: ")
+     replace-buffer
+     replace-buffer)))
+(bind "C-!" 'shell-command-on-buffer)
 
 (bind "M-:" 'eval-expression)
 
