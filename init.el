@@ -34,4 +34,12 @@
 (setq inhibit-startup-echo-message t)
 
 (global-subword-mode 1)
+
+(fset 'yes-or-no-p 'y-or-n-p)
+
+(setq confirm-nonexistant-file-or-buffer nil)
+
+(setq kill-buffer-query-functions
+  (remq 'process-kill-buffer-query-function
+         kill-buffer-query-functions))
 ;;;; ---------------------------------------------------------------------------

@@ -68,6 +68,9 @@
 
 (bind "C-x C-o" 'delete-blank-lines)
 
+(bind "C-d" 'delete-char)
+(bind "M-d" 'kill-word)
+
 ;;; Movement.
 (setf next-line-add-newlines nil)
 (setf line-move-visual t)
