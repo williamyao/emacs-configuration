@@ -42,7 +42,7 @@
   (load-library "custom-powerline")
   (powerline-william-theme))
 
-(use-package paren-face-mode
+(use-package paren-face
   :config
   (global-paren-face-mode 1))
 
@@ -58,6 +58,11 @@
   :config
   (global-hl-line-mode 1))
 
-(use-package 'tramp
+(use-package tramp
   :config
   (setq tramp-default-method "ssh"))
+
+(use-package magit
+  :bind
+  (:map dyntu-global-map
+        ("C-x C-h" . magit-status)))
