@@ -36,7 +36,6 @@
 (bind "C-x k" 'kill-buffer)
 
 (bind "M-!" 'async-shell-command)
-(bind "M-|" 'shell-command-on-region)
 
 (bind "M-:" 'eval-expression)
 
