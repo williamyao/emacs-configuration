@@ -102,3 +102,10 @@
   :config
   (setq-default c-basic-offset 4)
   (setq-default c-default-style "linux"))
+
+(use-package doc-view
+  :bind
+  (:map doc-view-mode-map
+        ("M--" . doc-view-shrink)
+        ("M-=" . doc-view-enlarge)
+        ("M-g M-g" . doc-view-goto-page)))
