@@ -32,6 +32,8 @@
 
 (bind "C-M-x" 'eval-defun)
 
+(bind "C-x k" 'kill-buffer)
+
 ;;; Editing.
 (bind "C-u" 'universal-argument)
 

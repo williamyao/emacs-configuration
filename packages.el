@@ -1,10 +1,11 @@
 ;;;; Dyntu setup for various installed packages.
 
-(use-package term
+(use-package ido
   :config
   (ido-mode 1)
   (setq ido-enable-flex-matching t)
-  (setq ido-everywhere t))
+  (setq ido-everywhere t)
+  (setq ido-create-new-buffer 'always))
 
 (use-package smex
   :config
