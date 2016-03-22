@@ -58,7 +58,7 @@
 
 (bind "C-u" 'universal-argument)
 
-(bind "<backspace>" 'backward-delete-char)
+(bind "DEL" 'backward-delete-char)
 (bind "RET" 'newline-and-indent)
 (bind "C-j" 'newline)
 
