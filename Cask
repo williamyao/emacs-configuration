@@ -1,4 +1,4 @@
-;;;; Package file for Cask.
+magi======;;;; Package file for Cask.
 ;;;; Simplifies downloading of dependencies.
 
 ;;;; See https://github.com/cask/cask for more details.
@@ -11,7 +11,6 @@
 (depends-on "d-mode")
 (depends-on "discover")
 (depends-on "fill-column-indicator")
-(depends-on "magit")
 (depends-on "markdown-mode")
 (depends-on "page-break-lines")
 (depends-on "paredit")

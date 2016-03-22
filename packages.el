@@ -62,11 +62,6 @@
   :config
   (setq tramp-default-method "ssh"))
 
-(use-package magit
-  :bind
-  (:map dyntu-global-map
-        ("C-x C-h" . magit-status)))
-
 (use-package discover)
 
 (use-package vlf)
