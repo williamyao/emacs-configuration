@@ -67,6 +67,8 @@
 
 (show-paren-mode 1)
 
+(setq enable-recursive-minibuffers t)
+
 ;;; Tabulation. Important enough for a tag.
 
 (setq-default indent-tabs-mode nil)
