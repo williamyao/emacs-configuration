@@ -85,10 +85,7 @@
   :config
   (setq-default fci-rule-column 80))
 
-(use-package hideshow
-  :bind
-  (:map dyntu-global-map
-        ("M-h" . hs-toggle-hiding)))
+(use-package hideshow)
 
 (use-package paredit)
 
