@@ -13,6 +13,7 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "black" :foreground "light gray" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 90 :width normal :foundry "unknown" :family "Droid Sans Mono"))))
  '(mode-line ((t (:background "#505050" :foreground "white" :box nil))))
+ '(mode-line-inactive ((t (:box nil))))
  '(powerline-active1 ((t (:background "#303030" :foregroun d "#e0e0e0"))))
  '(powerline-active2 ((t (:background "#101010" :foreground "#cfcfcf"))))
  '(powerline-inactive1 ((t (:background "#404040" :foreground "#e0e0e0"))))
