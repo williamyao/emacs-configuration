@@ -106,3 +106,5 @@
         ("M--" . doc-view-shrink)
         ("M-=" . doc-view-enlarge)
         ("M-g M-g" . doc-view-goto-page)))
+
+(use-package haskell-mode)
