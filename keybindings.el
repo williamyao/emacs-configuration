@@ -58,7 +58,7 @@
 
 (bind "C-u" 'universal-argument)
 
-(bind "<backspace>" 'backward-delete-char)
+(bind "DEL" 'backward-delete-char)
 (bind "RET" 'newline-and-indent)
 (bind "C-j" 'newline)
 
@@ -69,7 +69,8 @@
 	     (open-line 1))
     (progn (end-of-line)
 	   (open-line 1)
-	   (next-line))))
+	   (next-line)))
+  (indent-for-tab-command))
 
 (bind "C-o" 'open-insert-line)
 
