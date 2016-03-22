@@ -69,7 +69,8 @@
 	     (open-line 1))
     (progn (end-of-line)
 	   (open-line 1)
-	   (next-line))))
+	   (next-line)))
+  (indent-for-tab-command))
 
 (bind "C-o" 'open-insert-line)
 
