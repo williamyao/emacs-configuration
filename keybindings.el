@@ -60,6 +60,7 @@
 
 (bind "DEL" 'backward-delete-char)
 (bind "RET" 'newline-and-indent)
+(bind "C-<return>" 'newline-and-indent)
 (bind "C-j" 'newline)
 
 (defun open-insert-line (p)
