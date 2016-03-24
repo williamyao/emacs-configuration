@@ -89,6 +89,7 @@
 (bind "C-;" 'comment-or-uncomment-region)
 
 (bind "C-y" 'yank)
+(bind "M-y" 'yank-pop)
 
 (bind "C-x C-o" 'delete-blank-lines)
 
