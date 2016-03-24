@@ -69,6 +69,8 @@
 
 (setq enable-recursive-minibuffers t)
 
+(require 'clean-mode-line)
+
 ;;; Tabulation. Important enough for a tag.
 
 (setq-default indent-tabs-mode nil)
