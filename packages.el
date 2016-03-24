@@ -2,12 +2,10 @@
 
 (use-package emacs
   :config
-  (add-hook 'emacs-lisp-mode-hook 'programming-customization)
-  (add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode 1))))
+  (add-hook 'emacs-lisp-mode-hook 'programming-customization))
 (use-package clojure-mode
   :config
-  (add-hook 'clojure-mode-hook 'programming-customization)
-  (add-hook 'clojure-mode-hook (lambda () (paredit-mode 1))))
+  (add-hook 'clojure-mode-hook 'programming-customization))
 (use-package cider)
 (use-package d-mode
   :config
@@ -17,8 +15,7 @@
   (add-hook 'haskell-mode-hook 'programming-customization))
 (use-package lisp-mode
   :config
-  (add-hook 'lisp-mode-hook 'programming-customization)
-  (add-hook 'lisp-mode-hook (lambda () (paredit-mode 1))))
+  (add-hook 'lisp-mode-hook 'programming-customization))
 (use-package cc-mode
   :config
   (setq-default c-basic-offset 4)
