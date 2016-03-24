@@ -10,10 +10,19 @@
 (load-library "~/.emacs.d/keybindings.el")
 ;;;; ---------------------------------------------------------------------------
 
-;;;; - Color theme ------------------------------------------------------------
+;;;; - Programming customization -----------------------------------------------
+
+(defun programming-customization ()
+  "Called when entering a programming mode. General programming packages
+   should add advice after this function. Programming modes should add this
+   as a hook alongside whatever other hooks they need to run.")
+
+;;;; ---------------------------------------------------------------------------
+
+;;;; - Color theme -------------------------------------------------------------
 
 (load-theme 'quasi-monochrome t)
-;;;; --------------------------------------------------------------------------
+;;;; ---------------------------------------------------------------------------
 
 ;;;; - Package installation ----------------------------------------------------
 ;;;                 Edit `packages.el' to change package customization.

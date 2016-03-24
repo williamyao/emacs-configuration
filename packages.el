@@ -1,5 +1,35 @@
 ;;;; Dyntu setup for various installed packages.
 
+(use-package emacs
+  :config
+  (add-hook 'emacs-lisp-mode-hook 'programming-customization)
+  (add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode 1))))
+(use-package clojure-mode
+  :config
+  (add-hook 'clojure-mode-hook 'programming-customization)
+  (add-hook 'clojure-mode-hook (lambda () (paredit-mode 1))))
+(use-package cider)
+(use-package d-mode
+  :config
+  (add-hook 'd-mode-hook 'programming-customization))
+(use-package haskell-mode
+  :config
+  (add-hook 'haskell-mode-hook 'programming-customization))
+(use-package lisp-mode
+  :config
+  (add-hook 'lisp-mode-hook 'programming-customization)
+  (add-hook 'lisp-mode-hook (lambda () (paredit-mode 1))))
+(use-package cc-mode
+  :config
+  (setq-default c-basic-offset 4)
+  (setq-default c-default-style "linux")
+  (add-hook 'c-mode-hook 'programming-customization)
+  (add-hook 'c++-mode-hook 'programming-customization))
+(use-package sml-mode
+  :config
+  (add-hook 'sml-mode-hook 'programming-customization))
+(use-package sly)
+
 (use-package ido
   :config
   (ido-mode 1)
@@ -71,34 +101,31 @@
 
 (use-package vlf)
 
-(use-package clojure-mode)
-
-(use-package cider)
-
-(use-package d-mode)
-
 (use-package page-break-lines
   :config
   (global-page-break-lines-mode))
 
 (use-package fill-column-indicator
   :config
-  (setq-default fci-rule-column 80))
+  (setq-default fci-rule-column 80)
+  (advice-add 'programming-customization
+              :after
+              (lambda () (fci-mode 1))))
 
-(use-package hideshow)
+(use-package hideshow
+  :config
+  (advice-add 'programming-customization
+              :after
+              (lambda ()
+                (hs-minor-mode 1)
+                (hs-hide-all)))
+  :bind
+  (:map dyntu-global-map
+        ("C-b" . hs-toggle-hiding)))
 
 (use-package paredit)
 
-(use-package sml-mode)
-
 (use-package vlf)
-
-(use-package sly)
-
-(use-package cc-mode
-  :config
-  (setq-default c-basic-offset 4)
-  (setq-default c-default-style "linux"))
 
 (use-package doc-view
   :bind
@@ -106,5 +133,3 @@
         ("M--" . doc-view-shrink)
         ("M-=" . doc-view-enlarge)
         ("M-g M-g" . doc-view-goto-page)))
-
-(use-package haskell-mode)
