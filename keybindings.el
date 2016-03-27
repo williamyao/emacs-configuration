@@ -37,8 +37,7 @@
 (bind "C-M-x" 'eval-defun)
 (bind "M-:" 'eval-expression)
 
-(bind "C-x k" 'kill-region)
-(bind "M-w" 'kill-ring-save)
+(bind "C-x k" 'kill-buffer)
 
 (bind "M-!" 'async-shell-command)
 (defun shell-command-on-buffer (p)
@@ -78,6 +77,7 @@
 
 (bind "C-w" 'backward-kill-word)
 (bind "C-x C-k" 'kill-region)
+(bind "M-w" 'kill-ring-save)
 
 (bind "C-k" 'kill-line)
 (bind "C-M-k" 'kill-sexp)
