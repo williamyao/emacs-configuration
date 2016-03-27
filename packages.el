@@ -5,7 +5,8 @@
   (add-hook 'emacs-lisp-mode-hook 'programming-customization))
 (use-package clojure-mode
   :config
-  (add-hook 'clojure-mode-hook 'programming-customization))
+  (add-hook 'clojure-mode-hook 'programming-customization)
+  (add-hook 'clojure-mode-hook (lambda () (eldoc-mode 1))))
 (use-package cider)
 (use-package d-mode
   :config
