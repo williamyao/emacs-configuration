@@ -65,6 +65,9 @@
 (setq ring-bell-function (lambda ()))
 (setq show-help-function nil)
 
+(setq-default sentence-end "[\\.;:!?] ")
+(setq-default make-backup-files nil)
+
 (setq-default truncate-lines t)
 
 (define-globalized-minor-mode global-delete-selection-mode
