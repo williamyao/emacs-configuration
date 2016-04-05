@@ -40,10 +40,12 @@
 (bind "C-x k" 'kill-buffer)
 
 (bind "C-x o" 'other-window)
-(bind "C-x 5 0" 'delete-window)
 
 (bind "C-x 2" 'split-window-below)
 (bind "C-x 3" 'split-window-right)
+(bind "C-x 0" 'delete-window)
+
+(bind "C-x 5 0" 'delete-frame)
 
 (bind "M-!" 'async-shell-command)
 (defun shell-command-on-buffer (p)
