@@ -26,7 +26,9 @@
 (use-package sml-mode
   :config
   (add-hook 'sml-mode-hook 'programming-customization))
-(use-package sly)
+(use-package sly
+  :config
+  (setq-default inferior-lisp-program "sbcl"))
 
 (use-package ido
   :config
