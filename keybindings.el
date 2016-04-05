@@ -39,6 +39,12 @@
 
 (bind "C-x k" 'kill-buffer)
 
+(bind "C-x o" 'other-window)
+(bind "C-x 5 0" 'delete-window)
+
+(bind "C-x 2" 'split-window-below)
+(bind "C-x 3" 'split-window-right)
+
 (bind "M-!" 'async-shell-command)
 (defun shell-command-on-buffer (p)
   (interactive "P")
@@ -122,9 +128,6 @@
 
 (bind "C-M-," 'beginning-of-buffer)
 (bind "C-M-." 'end-of-buffer)
-
-(bind "C-x o" 'other-window)
-(bind "C-x 5 0" 'delete-window)
 
 (bind "C-v" 'scroll-up-command)
 (bind "M-v" 'scroll-down-command)
