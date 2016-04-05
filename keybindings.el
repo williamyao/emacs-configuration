@@ -124,7 +124,7 @@
 (bind "C-M-." 'end-of-buffer)
 
 (bind "C-x o" 'other-window)
-(bind "C-x 0" 'delete-window)
+(bind "C-x 5 0" 'delete-window)
 
 (bind "C-v" 'scroll-up-command)
 (bind "M-v" 'scroll-down-command)
