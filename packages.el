@@ -138,4 +138,4 @@
         ("M-g M-g" . doc-view-goto-page)))
 
 (use-package ledger-mode
-  :mode "ledger.*\\.dat\\'")
+  :mode ".*ledger.*\\.dat\\'")
