@@ -1,5 +1,8 @@
 ;;;; Dyntu setup for various installed packages.
 
+
+;;; Programming languages.
+
 (use-package emacs
   :config
   (add-hook 'emacs-lisp-mode-hook 'programming-customization))
@@ -133,3 +136,6 @@
         ("M--" . doc-view-shrink)
         ("M-=" . doc-view-enlarge)
         ("M-g M-g" . doc-view-goto-page)))
+
+(use-package ledger-mode
+  :mode "ledger.*\\.dat\\'")
