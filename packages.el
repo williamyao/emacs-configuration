@@ -139,3 +139,11 @@
 
 (use-package ledger-mode
   :mode ".*ledger.*\\.dat\\'")
+
+(use-package erc
+  :config
+  (setq erc-hide-list '("JOIN" "PART" "QUIT"))
+  (add-hook 'erc-mode-hook
+            (lambda ()
+              (erc-scrolltobottom-mode 1)
+              (setq erc-input-line-position -2))))
