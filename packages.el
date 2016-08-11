@@ -32,6 +32,7 @@
 (use-package sly
   :config
   (setq-default inferior-lisp-program "sbcl"))
+(use-package typescript-mode)
 
 (use-package ido
   :config

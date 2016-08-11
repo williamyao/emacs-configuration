@@ -24,6 +24,7 @@
 (depends-on "smex")
 (depends-on "sml-mode")
 (depends-on "sly")
+(depends-on "typescript-mode")
 (depends-on "undo-tree")
 (depends-on "use-package")
 (depends-on "vlf")
