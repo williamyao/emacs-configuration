@@ -13,6 +13,7 @@
 (depends-on "fill-column-indicator")
 (depends-on "haskell-mode")
 (depends-on "ledger-mode")
+(depends-on "lispy")
 (depends-on "magit")
 (depends-on "markdown-mode")
 (depends-on "page-break-lines")

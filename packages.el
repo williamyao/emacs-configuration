@@ -5,10 +5,12 @@
 
 (use-package emacs
   :config
-  (add-hook 'emacs-lisp-mode-hook 'programming-customization))
+  (add-hook 'emacs-lisp-mode-hook 'programming-customization)
+  (add-hook 'emacs-lisp-mode-hook 'lisp-customization))
 (use-package clojure-mode
   :config
   (add-hook 'clojure-mode-hook 'programming-customization)
+  (add-hook 'clojure-mode-hook 'lisp-customization)
   (add-hook 'clojure-mode-hook (lambda () (eldoc-mode 1))))
 (use-package cider)
 (use-package d-mode
@@ -19,7 +21,8 @@
   (add-hook 'haskell-mode-hook 'programming-customization))
 (use-package lisp-mode
   :config
-  (add-hook 'lisp-mode-hook 'programming-customization))
+  (add-hook 'lisp-mode-hook 'programming-customization)
+  (add-hook 'lisp-mode-hook 'lisp-customization))
 (use-package cc-mode
   :config
   (setq-default c-basic-offset 4)
@@ -44,18 +47,9 @@
 (use-package smex
   :config
   (smex-initialize)
-  (setq smex-prompt-string "> ")
-  :bind
-  (:map dyntu-global-map
-	("M-x" . smex)
-	("M-X" . smex-major-mode-commands)))
+  (setq smex-prompt-string "> "))
 
-(use-package undo-tree
-  :bind
-  (:map dyntu-global-map
-	("C--" . undo-tree-undo)
-	("C-M--" . undo-tree-redo)
-	("C-x C-M--" . undo-tree-visualize)))
+(use-package undo-tree)
 
 (use-package recentf
   :config
@@ -66,10 +60,7 @@
     (interactive)
     (if (find-file (ido-completing-read "Find recent file: " recentf-list))
 	(message "Opening file...")
-      (message "Aborting")))
-  :bind
-  (:map dyntu-global-map
-	("C-x C-r" . ido-recentf-open)))
+    (message "Aborting"))))
 
 (use-package powerline
   :config
@@ -96,10 +87,7 @@
   :config
   (setq tramp-default-method "ssh"))
 
-(use-package magit
-  :bind
-  (:map dyntu-global-map
-        ("C-x C-h" . magit-status)))
+(use-package magit)
 
 (use-package discover)
 
@@ -122,10 +110,14 @@
               :after
               (lambda ()
                 (hs-minor-mode 1)
-                (hs-hide-all)))
-  :bind
-  (:map dyntu-global-map
-        ("C-b" . hs-toggle-hiding)))
+                (hs-hide-all))))
+
+(use-package lispy
+  :config
+  (advice-add 'lisp-customization
+              :after
+              (lambda ()
+                (lispy-mode 1))))
 
 (use-package paredit)
 
