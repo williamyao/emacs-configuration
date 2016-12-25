@@ -6,6 +6,7 @@
     (yas/minor-mode . "")
     (yas-minor-mode . "")
     (paredit-mode . " ()")
+    (lispy-mode . " ()")
     (paredit-algol-like-mode . " {}")
     (eldoc-mode . "")
     (abbrev-mode . "")
