@@ -143,4 +143,9 @@
               (erc-scrolltobottom-mode 1)
               (setq erc-input-line-position -2))))
 
-(use-package multiple-cursors)
+(use-package multiple-cursors
+  :init
+  (setq mc/list-file "~/.emacs.d/multiple-cursors.conf")
+  :config
+  (setq-default mc/always-run-for-all t))
+
