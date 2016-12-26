@@ -34,9 +34,11 @@
 (use-package sml-mode
   :config
   (add-hook 'sml-mode-hook 'programming-customization))
-(use-package sly
+(use-package slime
   :config
-  (setq-default inferior-lisp-program "sbcl"))
+  (setq-default inferior-lisp-program "sbcl")
+  (require 'slime-autoloads)
+  (add-to-list 'slime-contribs 'slime-fancy))
 (use-package typescript-mode)
 
 (use-package ido

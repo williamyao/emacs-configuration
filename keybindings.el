@@ -38,10 +38,10 @@
 (setf next-line-add-newlines nil)
 (setf line-move-visual t)
 
-(bind "C-x M-p" 'windmove-up)
-(bind "C-x M-n" 'windmove-down)
-(bind "C-x M-f" 'windmove-right)
-(bind "C-x M-b" 'windmove-left)
+(bind "C-x M-k" 'windmove-up)
+(bind "C-x M-j" 'windmove-down)
+(bind "C-x M-l" 'windmove-right)
+(bind "C-x M-h" 'windmove-left)
 
 (use-package hideshow
   :bind (("<C-tab>" . hs-toggle-hiding)))

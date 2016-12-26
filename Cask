@@ -25,7 +25,7 @@
 (depends-on "rainbow-mode")
 (depends-on "smex")
 (depends-on "sml-mode")
-(depends-on "sly")
+(depends-on "slime")
 (depends-on "typescript-mode")
 (depends-on "undo-tree")
 (depends-on "use-package")
