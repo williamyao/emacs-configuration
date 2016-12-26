@@ -6,7 +6,9 @@
 (use-package emacs
   :config
   (add-hook 'emacs-lisp-mode-hook 'programming-customization)
-  (add-hook 'emacs-lisp-mode-hook 'lisp-customization))
+  (add-hook 'emacs-lisp-mode-hook 'lisp-customization)
+  :mode
+  ("Cask\\'" . emacs-lisp-mode))
 (use-package clojure-mode
   :config
   (add-hook 'clojure-mode-hook 'programming-customization)
@@ -140,3 +142,5 @@
             (lambda ()
               (erc-scrolltobottom-mode 1)
               (setq erc-input-line-position -2))))
+
+(use-package multiple-cursors)
