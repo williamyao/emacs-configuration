@@ -23,3 +23,8 @@ reverse-region
 
 tabify
 untabify
+
+enlarge-window                          C-x ^
+enlarge-window-horizontally             C-x }
+shrink-window-horizontally              C-x {
+shrink-window-if-larger-than-buffer     C-x -
