@@ -113,8 +113,7 @@
   (advice-add 'programming-customization
               :after
               (lambda ()
-                (hs-minor-mode 1)
-                (hs-hide-all))))
+                (hs-minor-mode 1))))
 
 (use-package lispy
   :config
