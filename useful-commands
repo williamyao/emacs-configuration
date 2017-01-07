@@ -4,7 +4,7 @@ remember.
 Name                            Default binding
 -----------------------------------------------
 
-repeat-complex-command          C-x M-ESC
+repeat-complex-command          C-x M-ESC || C-x ESC ESC
 repeat                          C-x z
 
 shell-command                   M-!
