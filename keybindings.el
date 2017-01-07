@@ -30,6 +30,7 @@
   (indent-for-tab-command))
 (bind "C-o" 'open-insert-line)
 (bind "C-w" 'backward-kill-word)
+(bind "C-x C-k" 'kill-region)
 (bind "C-x j" 'delete-indentation)
 (bind "C-." 'indent-relative)
 (bind "C-x C-o" 'delete-blank-lines)
