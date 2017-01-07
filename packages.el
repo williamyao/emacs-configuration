@@ -38,7 +38,19 @@
   :config
   (setq-default inferior-lisp-program "sbcl")
   (require 'slime-autoloads)
-  (add-to-list 'slime-contribs 'slime-fancy))
+  (add-to-list 'slime-contribs 'slime-fancy)
+  (defun slime-eval-print-interactive (string)
+    (interactive "MSLIME eval/print: ")
+    (slime-eval-print string))
+  (defun slime-format-print (string)
+    (interactive "M[SLIME] Format string: ")
+    (slime-eval-print
+     (concat "(progn (format t \""
+             string
+             "\") (values))")))
+
+  :bind (("C-x M-:" . slime-eval-print-interactive)
+         ("C-x C-M-f" . slime-format-print)))
 (use-package typescript-mode)
 
 (use-package ido
