@@ -37,8 +37,11 @@
 (use-package slime
   :config
   (setq-default inferior-lisp-program "sbcl")
+  
   (require 'slime-autoloads)
   (add-to-list 'slime-contribs 'slime-fancy)
+  (add-to-list 'slime-contribs 'slime-indentation)
+  
   (defun slime-eval-print-interactive (string)
     (interactive "MSLIME eval/print: ")
     (slime-eval-print string))
