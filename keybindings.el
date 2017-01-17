@@ -35,6 +35,9 @@
 (bind "C-." 'indent-relative)
 (bind "C-x C-o" 'delete-blank-lines)
 
+(global-unset-key (kbd "C-z"))
+(global-unset-key (kbd "C-x C-z"))
+
 ;;; Movement.
 (setf next-line-add-newlines nil)
 (setf line-move-visual t)
