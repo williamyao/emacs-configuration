@@ -37,11 +37,11 @@
 (use-package slime
   :config
   (setq-default inferior-lisp-program "sbcl")
-  
+
   (require 'slime-autoloads)
   (add-to-list 'slime-contribs 'slime-fancy)
   (add-to-list 'slime-contribs 'slime-indentation)
-  
+
   (defun slime-eval-print-interactive (string)
     (interactive "MSLIME eval/print: ")
     (slime-eval-print string))
@@ -51,6 +51,8 @@
      (concat "(progn (format t \""
              string
              "\") (values))")))
+
+  (put 'iter 'common-lisp-indent-function '(&rest (&whole 6 &rest)))
 
   :bind (("C-x M-:" . slime-eval-print-interactive)
          ("C-x C-M-f" . slime-format-print)))
@@ -164,4 +166,3 @@
   (setq mc/list-file "~/.emacs.d/multiple-cursors.conf")
   :config
   (setq-default mc/always-run-for-all t))
-
