@@ -88,21 +88,9 @@
   (load-library "custom-powerline")
   (powerline-william-theme))
 
-(use-package hi-lock
-  :config
-  (advice-add 'lisp-customization
-              :after
-              (lambda ()
-                (hi-lock-mode 1))))
-
-;; Not usable directly because it requires `font-lock-mode'.
 (use-package paren-face
   :config
-  (advice-add 'lisp-customization
-              :after
-              (lambda ()
-                (hi-lock-face-buffer "(" 'parenthesis)
-                (hi-lock-face-buffer ")" 'parenthesis))))
+  (global-paren-face-mode 1))
 
 ;;; Removed because it unnecessarily enabled `font-lock-mode'.
 ;;; Smarter would be to use `hi-lock-mode'.
@@ -181,9 +169,3 @@
   (setq mc/list-file "~/.emacs.d/multiple-cursors.conf")
   :config
   (setq-default mc/always-run-for-all t))
-
-(use-package font-lock
-  :config
-  (advice-add 'lisp-customization
-              :after
-              (lambda () (font-lock-mode 0))))

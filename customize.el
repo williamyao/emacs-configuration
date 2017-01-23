@@ -16,7 +16,16 @@
  '(mode-line ((t (:background "#505050" :foreground "white" :box nil))))
  '(mode-line-inactive ((t (:box nil))))
  '(parenthesis ((t (:foreground "gray30"))))
- '(powerline-active1 ((t (:background "#303030" :foregroun d "#e0e0e0"))))
+ '(powerline-active1 ((t (:background "#303030" :foreground "#e0e0e0"))))
  '(powerline-active2 ((t (:background "#101010" :foreground "#cfcfcf"))))
  '(powerline-inactive1 ((t (:background "#404040" :foreground "#e0e0e0"))))
  '(powerline-inactive2 ((t (:background "#1f1f1f" :foreground "#cfcfcf")))))
+
+(custom-theme-set-faces
+ 'quasi-monochrome
+ '(font-lock-warning-face ((t nil)))
+ '(font-lock-type-face ((t nil)))
+ '(font-lock-keyword-face ((t nil)))
+ '(font-lock-function-name-face ((t nil)))
+ '(font-lock-builtin-face ((t (:foreground "#9b7063"))))
+ '(font-lock-comment-face ((t (:foreground "#bca753")))))
