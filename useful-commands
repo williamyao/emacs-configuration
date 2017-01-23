@@ -13,7 +13,7 @@ shell-command-on-region         M-|
 
 indent-rigidly                  C-x TAB
 
-info-apropos                    
+info-apropos
 
 sort-lines
 sort-fields
@@ -28,3 +28,8 @@ enlarge-window                          C-x ^
 enlarge-window-horizontally             C-x }
 shrink-window-horizontally              C-x {
 shrink-window-if-larger-than-buffer     C-x -
+
+narrow-to-defun                         C-x n d
+narrow-to-region                           C-x n n
+narrow-to-page                          C-x n p
+widen                                   C-x n w

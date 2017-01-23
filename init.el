@@ -91,4 +91,6 @@
 
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
-;;;; ---------------------------------------------------------------------------
+;;;; - Disbaled commands -------------------------------------------------------
+
+(put 'narrow-to-page 'disabled nil)
