@@ -92,13 +92,16 @@
   :config
   (global-paren-face-mode 1))
 
-(use-package rainbow-mode
-  :config
-  (define-globalized-minor-mode global-rainbow-mode rainbow-mode
-    (lambda ()
-      (rainbow-mode 1)))
+;;; Removed because it unnecessarily enabled `font-lock-mode'.
+;;; Smarter would be to use `hi-lock-mode'.
 
-  (global-rainbow-mode 1))
+;; (use-package rainbow-mode
+;;   :config
+;;   (define-globalized-minor-mode global-rainbow-mode rainbow-mode
+;;     (lambda ()
+;;       (rainbow-mode 1)))
+;;
+;;   (global-rainbow-mode 1))
 
 (use-package hl-line
   :config
@@ -166,3 +169,9 @@
   (setq mc/list-file "~/.emacs.d/multiple-cursors.conf")
   :config
   (setq-default mc/always-run-for-all t))
+
+(use-package font-lock
+  :config
+  (advice-add 'lisp-customization
+              :after
+              (lambda () (font-lock-mode 0))))
