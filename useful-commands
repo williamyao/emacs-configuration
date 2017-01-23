@@ -30,6 +30,6 @@ shrink-window-horizontally              C-x {
 shrink-window-if-larger-than-buffer     C-x -
 
 narrow-to-defun                         C-x n d
-narrow-to-region                           C-x n n
+narrow-to-region                        C-x n n
 narrow-to-page                          C-x n p
 widen                                   C-x n w
