@@ -15,7 +15,7 @@
  '(default ((t (:inherit nil :stipple nil :background "black" :foreground "light gray" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 80 :width normal :foundry "unknown" :family "Anonymous Pro"))))
  '(mode-line ((t (:background "#505050" :foreground "white" :box nil))))
  '(mode-line-inactive ((t (:box nil))))
- '(parenthesis ((t (:foreground "gray60"))))
+ '(parenthesis ((t (:foreground "gray30"))))
  '(powerline-active1 ((t (:background "#303030" :foregroun d "#e0e0e0"))))
  '(powerline-active2 ((t (:background "#101010" :foreground "#cfcfcf"))))
  '(powerline-inactive1 ((t (:background "#404040" :foreground "#e0e0e0"))))
