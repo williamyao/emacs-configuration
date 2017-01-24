@@ -28,6 +28,7 @@ enlarge-window                          C-x ^
 enlarge-window-horizontally             C-x }
 shrink-window-horizontally              C-x {
 shrink-window-if-larger-than-buffer     C-x -
+balance-windows                         C-x +
 
 narrow-to-defun                         C-x n d
 narrow-to-region                        C-x n n
