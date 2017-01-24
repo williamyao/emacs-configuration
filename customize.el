@@ -6,7 +6,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(fringe-mode (quote (6 . 0)) nil (fringe))
- '(ledger-post-amount-alignment-at :decimal))
+ '(ledger-post-amount-alignment-at :decimal)
+ '(show-paren-delay 0))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
