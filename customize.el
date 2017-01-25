@@ -29,7 +29,7 @@
  '(font-lock-type-face ((t nil)))
  '(font-lock-keyword-face ((t nil)))
  '(font-lock-function-name-face ((t nil)))
- '(font-lock-builtin-face ((t (:foreground "#891f00"))))
+ '(font-lock-builtin-face ((t (:foreground "#d38974"))))
  '(font-lock-comment-face ((t (:foreground "#bca753"))))
  '(cursor ((t (:background "deep pink"))))
  '(show-paren-match ((t (:background "gold2")))))
