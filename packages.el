@@ -55,7 +55,10 @@
   (put 'iter 'common-lisp-indent-function '(&rest (&whole 6 &rest)))
 
   :bind (("C-x M-:" . slime-eval-print-interactive)
-         ("C-x C-M-f" . slime-format-print)))
+         ("C-x C-M-f" . slime-format-print)
+         :map slime-mode-map
+         ("C-c M-t" . slime-trace-dialog-toggle-trace)
+         ("C-c T" . slime-trace-dialog)))
 (use-package typescript-mode)
 
 (use-package ido
