@@ -83,6 +83,8 @@
 
 (show-paren-mode 1)
 
+(blink-cursor-mode 0)
+
 (setq enable-recursive-minibuffers t)
 
 (require 'clean-mode-line)
