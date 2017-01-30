@@ -120,10 +120,6 @@
 
 (use-package vlf)
 
-(use-package page-break-lines
-  :config
-  (global-page-break-lines-mode))
-
 (use-package fill-column-indicator
   :config
   (setq-default fci-rule-column 80)
