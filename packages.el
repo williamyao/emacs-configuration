@@ -60,6 +60,10 @@
          ("C-c M-t" . slime-trace-dialog-toggle-trace)
          ("C-c T" . slime-trace-dialog)))
 (use-package typescript-mode)
+(use-package rust-mode
+  :config
+  (setq-default rust-indent-offset 2)
+  (add-hook 'rust-mode-hook 'programming-customization))
 
 (use-package ido
   :config

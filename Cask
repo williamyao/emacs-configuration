@@ -22,6 +22,7 @@
 (depends-on "powerline")
 (depends-on "quasi-monochrome-theme")
 (depends-on "rainbow-mode")
+(depends-on "rust-mode")
 (depends-on "smex")
 (depends-on "sml-mode")
 (depends-on "slime")
