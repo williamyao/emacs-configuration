@@ -64,6 +64,9 @@
   :config
   (setq-default rust-indent-offset 2)
   (add-hook 'rust-mode-hook 'programming-customization))
+(use-package nix-mode
+  :config
+  (add-hook 'nix-mode-hook 'programming-customization))
 
 (use-package ido
   :config

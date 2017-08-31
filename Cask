@@ -17,6 +17,7 @@
 (depends-on "magit")
 (depends-on "markdown-mode")
 (depends-on "multiple-cursors")
+(depends-on "nix-mode")
 (depends-on "paredit")
 (depends-on "paren-face")
 (depends-on "powerline")
